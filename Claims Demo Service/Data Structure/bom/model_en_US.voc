@@ -1,0 +1,514 @@
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.BenefitEligStatus
+cpadmin.claims_demo.claims_demo_service.datastructure.BenefitEligStatus#concept.label = BenefitEligStatus
+cpadmin.claims_demo.claims_demo_service.datastructure.BenefitEligStatus.active#instance.label = Active
+cpadmin.claims_demo.claims_demo_service.datastructure.BenefitEligStatus.inactive#instance.label = Inactive
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.BenefitType
+cpadmin.claims_demo.claims_demo_service.datastructure.BenefitType#concept.label = BenefitType
+cpadmin.claims_demo.claims_demo_service.datastructure.BenefitType.hospitalCash#instance.label = Hospital Cash
+cpadmin.claims_demo.claims_demo_service.datastructure.BenefitType.hospitalReimbursment#instance.label = Hospital Reimbursment
+cpadmin.claims_demo.claims_demo_service.datastructure.BenefitType.surgicalCash#instance.label = Surgical Cash
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.Benefits
+cpadmin.claims_demo.claims_demo_service.datastructure.Benefits#concept.label = Benefits
+cpadmin.claims_demo.claims_demo_service.datastructure.Benefits.Benefits(cpadmin.claims_demo.claims_demo_service.datastructure.BenefitType)#phrase.navigation = a new {Benefits} where {0, Type}
+cpadmin.claims_demo.claims_demo_service.datastructure.Benefits.type#phrase.action = set the Type of {this} to {Type}
+cpadmin.claims_demo.claims_demo_service.datastructure.Benefits.type#phrase.clearer = clear the Type of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Benefits.type#phrase.navigation = {Type} of {this}
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.Claim
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim#concept.label = Claim
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.Claim(double,cpadmin.claims_demo.claims_demo_service.datastructure.Currency,java.time.LocalDate,boolean,cpadmin.claims_demo.claims_demo_service.datastructure.GeographicArea,double,double,cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterCode,cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterType,double,java.lang.String,boolean,java.lang.String,cpadmin.claims_demo.claims_demo_service.datastructure.SubType,double,cpadmin.claims_demo.claims_demo_service.datastructure.ClaimType,boolean)#phrase.navigation = a new {Claim} where {0, BilledAmount} {1, Currency} {2, Date} {3, FraudIndicator} {4, GeographicArea} {5, GeographicCount} {6, LengthStay} {7, MedicalCenterCode} {8, MedicalCenterType} {9, NonDisScore} {10, PrevClaimsSubmitted} {11, RedFlagIndicator} {12, RedFlagReason} {13, SubType} {14, SurgeryCostAmount} {15, Type} {16, UnstructuredData}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.billedAmount#phrase.action = set the BilledAmount of {this} to {BilledAmount}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.billedAmount#phrase.addition_setter = add {BilledAmount} to the BilledAmount of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.billedAmount#phrase.navigation = {BilledAmount} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.billedAmount#phrase.subtraction_setter = subtract {BilledAmount} from the BilledAmount of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.currency#phrase.action = set the Currency of {this} to {Currency}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.currency#phrase.clearer = clear the Currency of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.currency#phrase.navigation = {Currency} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.date#phrase.action = set the Date of {this} to {Date}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.date#phrase.navigation = {Date} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.fraudIndicator#phrase.action[0] = {this} gets FraudIndicator only if {FraudIndicator}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.fraudIndicator#phrase.action[1] = make it {FraudIndicator} that {this} is FraudIndicator
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.fraudIndicator#phrase.action[1].deprecated = true
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.fraudIndicator#phrase.navigation = {this} is FraudIndicator
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.fraudIndicator#phrase.negative_predicate = {this} is not FraudIndicator
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.fraudIndicator#phrase.negative_predicate_setter = {this} does not get FraudIndicator
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.fraudIndicator#phrase.positive_predicate_setter = {this} gets FraudIndicator
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.geographicArea#phrase.action = set the GeographicArea of {this} to {GeographicArea}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.geographicArea#phrase.clearer = clear the GeographicArea of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.geographicArea#phrase.navigation = {GeographicArea} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.geographicCount#phrase.action = set the GeographicCount of {this} to {GeographicCount}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.geographicCount#phrase.addition_setter = add {GeographicCount} to the GeographicCount of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.geographicCount#phrase.navigation = {GeographicCount} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.geographicCount#phrase.subtraction_setter = subtract {GeographicCount} from the GeographicCount of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.lengthStay#phrase.action = set the LengthStay of {this} to {LengthStay}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.lengthStay#phrase.addition_setter = add {LengthStay} to the LengthStay of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.lengthStay#phrase.navigation = {LengthStay} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.lengthStay#phrase.subtraction_setter = subtract {LengthStay} from the LengthStay of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.medicalCenterCode#phrase.action = set the MedicalCenterCode of {this} to {MedicalCenterCode}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.medicalCenterCode#phrase.clearer = clear the MedicalCenterCode of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.medicalCenterCode#phrase.navigation = {MedicalCenterCode} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.medicalCenterType#phrase.action = set the MedicalCenterType of {this} to {MedicalCenterType}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.medicalCenterType#phrase.clearer = clear the MedicalCenterType of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.medicalCenterType#phrase.navigation = {MedicalCenterType} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.nonDisScore#phrase.action = set the NonDisScore of {this} to {NonDisScore}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.nonDisScore#phrase.addition_setter = add {NonDisScore} to the NonDisScore of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.nonDisScore#phrase.navigation = {NonDisScore} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.nonDisScore#phrase.subtraction_setter = subtract {NonDisScore} from the NonDisScore of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.prevClaimsSubmitted#phrase.action = set the PrevClaimsSubmitted of {this} to {PrevClaimsSubmitted}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.prevClaimsSubmitted#phrase.navigation = {PrevClaimsSubmitted} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.redFlagIndicator#phrase.action[0] = {this} gets RedFlagIndicator only if {RedFlagIndicator}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.redFlagIndicator#phrase.action[1] = make it {RedFlagIndicator} that {this} is RedFlagIndicator
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.redFlagIndicator#phrase.action[1].deprecated = true
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.redFlagIndicator#phrase.navigation = {this} is RedFlagIndicator
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.redFlagIndicator#phrase.negative_predicate = {this} is not RedFlagIndicator
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.redFlagIndicator#phrase.negative_predicate_setter = {this} does not get RedFlagIndicator
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.redFlagIndicator#phrase.positive_predicate_setter = {this} gets RedFlagIndicator
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.redFlagReason#phrase.action = set the RedFlagReason of {this} to {RedFlagReason}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.redFlagReason#phrase.navigation = {RedFlagReason} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.subType#phrase.action = set the SubType of {this} to {SubType}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.subType#phrase.clearer = clear the SubType of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.subType#phrase.navigation = {SubType} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.surgeryCostAmount#phrase.action = set the SurgeryCostAmount of {this} to {SurgeryCostAmount}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.surgeryCostAmount#phrase.addition_setter = add {SurgeryCostAmount} to the SurgeryCostAmount of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.surgeryCostAmount#phrase.navigation = {SurgeryCostAmount} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.surgeryCostAmount#phrase.subtraction_setter = subtract {SurgeryCostAmount} from the SurgeryCostAmount of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.type#phrase.action = set the Type of {this} to {Type}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.type#phrase.clearer = clear the Type of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.type#phrase.navigation = {Type} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.unstructuredData#phrase.action[0] = {this} gets UnstructuredData only if {UnstructuredData}
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.unstructuredData#phrase.action[1] = make it {UnstructuredData} that {this} is UnstructuredData
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.unstructuredData#phrase.action[1].deprecated = true
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.unstructuredData#phrase.navigation = {this} is UnstructuredData
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.unstructuredData#phrase.negative_predicate = {this} is not UnstructuredData
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.unstructuredData#phrase.negative_predicate_setter = {this} does not get UnstructuredData
+cpadmin.claims_demo.claims_demo_service.datastructure.Claim.unstructuredData#phrase.positive_predicate_setter = {this} gets UnstructuredData
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.ClaimAmountEligibility
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimAmountEligibility#concept.label = Claim Amount Eligibility
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimAmountEligibility.ClaimAmountEligibility(java.lang.String,cpadmin.claims_demo.claims_demo_service.datastructure.Eligible$NotEligible)#phrase.navigation = a new {Claim Amount Eligibility} where {0, Message} {1, Output}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimAmountEligibility.message#phrase.action = set the Message of {this} to {Message}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimAmountEligibility.message#phrase.navigation = {Message} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimAmountEligibility.output#phrase.action = set the Output of {this} to {Output}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimAmountEligibility.output#phrase.clearer = clear the Output of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimAmountEligibility.output#phrase.navigation = {Output} of {this}
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.ClaimCostReasonableness
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimCostReasonableness#concept.label = Claim Cost Reasonableness
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimCostReasonableness.ClaimCostReasonableness(java.lang.String,cpadmin.claims_demo.claims_demo_service.datastructure.CostReasonableness)#phrase.navigation = a new {Claim Cost Reasonableness} where {0, Message} {1, Output}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimCostReasonableness.message#phrase.action = set the Message of {this} to {Message}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimCostReasonableness.message#phrase.navigation = {Message} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimCostReasonableness.output#phrase.action = set the Output of {this} to {Output}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimCostReasonableness.output#phrase.clearer = clear the Output of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimCostReasonableness.output#phrase.navigation = {Output} of {this}
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.ClaimEligibility
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimEligibility#concept.label = Claim Eligibility
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimEligibility.ClaimEligibility(java.lang.String,cpadmin.claims_demo.claims_demo_service.datastructure.Eligible$NotEligible)#phrase.navigation = a new {Claim Eligibility} where {0, Message} {1, Output}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimEligibility.message#phrase.action = set the Message of {this} to {Message}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimEligibility.message#phrase.navigation = {Message} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimEligibility.output#phrase.action = set the Output of {this} to {Output}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimEligibility.output#phrase.clearer = clear the Output of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimEligibility.output#phrase.navigation = {Output} of {this}
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability#concept.label = Acceptable/Unacceptable/Questionable
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability.acceptable#instance.label = Acceptable
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability.notAcceptable#instance.label = Not Acceptable
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability.questionable#instance.label = Questionable
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability.unacceptable#instance.label = Unacceptable
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptabilityList
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptabilityList#concept.label = Claim Medical Wastage Acceptability List
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptabilityList.ClaimMedicalWastageAcceptabilityList(java.lang.String,cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability)#phrase.navigation = a new {Claim Medical Wastage Acceptability List} where {0, Message} {1, Output}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptabilityList.message#phrase.action = set the Message of {this} to {Message}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptabilityList.message#phrase.navigation = {Message} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptabilityList.output#phrase.action = set the Output of {this} to {Output}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptabilityList.output#phrase.clearer = clear the Output of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptabilityList.output#phrase.navigation = {Output} of {this}
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.ClaimStatus
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimStatus#concept.label = Claim Status
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimStatus.accept#instance.label = Accept
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimStatus.decline#instance.label = Decline
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimStatus.manualReview#instance.label = Manual Review
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.ClaimType
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimType#concept.documentation = Type
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimType#concept.label = ClaimType
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimType.medical#instance.label = Medical
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimType.notMedical#instance.label = Not Medical
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.ClaimUnstructuredData
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimUnstructuredData#concept.label = Claim Unstructured Data
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimUnstructuredData.noUnstructuredData#instance.label = No Unstructured Data
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimUnstructuredData.unstructuredData#instance.label = Unstructured Data
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidity
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidity#concept.label = Claim Validity
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidity.ClaimValidity(java.lang.String,cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidityList)#phrase.navigation = a new {Claim Validity} where {0, Message} {1, Output}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidity.message#phrase.action = set the Message of {this} to {Message}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidity.message#phrase.navigation = {Message} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidity.output#phrase.action = set the Output of {this} to {Output}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidity.output#phrase.clearer = clear the Output of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidity.output#phrase.navigation = {Output} of {this}
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidityList
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidityList#concept.label = Claim Validity List
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidityList.notValid#instance.label = Not Valid
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidityList.questionable#instance.label = Questionable
+cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidityList.valid#instance.label = Valid
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.CostReasonableness
+cpadmin.claims_demo.claims_demo_service.datastructure.CostReasonableness#concept.label = CostReasonableness
+cpadmin.claims_demo.claims_demo_service.datastructure.CostReasonableness.QUESTIONABLE#instance.label = QUESTIONABLE
+cpadmin.claims_demo.claims_demo_service.datastructure.CostReasonableness.REASONABLE#instance.label = REASONABLE
+cpadmin.claims_demo.claims_demo_service.datastructure.CostReasonableness.UNREASONABLE#instance.label = UNREASONABLE
+cpadmin.claims_demo.claims_demo_service.datastructure.CostReasonableness.noneOfTheAbove#instance.label = None Of The Above
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.Currency
+cpadmin.claims_demo.claims_demo_service.datastructure.Currency#concept.documentation = 
+cpadmin.claims_demo.claims_demo_service.datastructure.Currency#concept.label = Currency
+cpadmin.claims_demo.claims_demo_service.datastructure.Currency.CAD#instance.label = CAD
+cpadmin.claims_demo.claims_demo_service.datastructure.Currency.USD#instance.label = USD
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.CurrentClaim
+cpadmin.claims_demo.claims_demo_service.datastructure.CurrentClaim#concept.label = CurrentClaim
+cpadmin.claims_demo.claims_demo_service.datastructure.CurrentClaim.notNull#instance.label = Not Null
+cpadmin.claims_demo.claims_demo_service.datastructure.CurrentClaim.null#instance.label = Null
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput#concept.label = Decision Output
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.DecisionOutput(cpadmin.claims_demo.claims_demo_service.datastructure.Score,java.util.List,java.util.List,java.util.List,java.util.List)#phrase.navigation = a new {Decision Output} where {0, Claim Complexity} {1, Claim Eligibility} {2, Claim Medical Wastage} {3, Claim Status} {4, Claim Validity}
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.addTo_claimEligibility(cpadmin.claims_demo.claims_demo_service.datastructure.ClaimEligibility)#phrase.action = add {0} to the Claim Eligibilities of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.addTo_claimMedicalWastage(cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability)#phrase.action = add {0} to the Claim Medical Wastages of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.addTo_claimStatus(cpadmin.claims_demo.claims_demo_service.datastructure.ClaimStatus)#phrase.action = add {0} to the Claim Statuses of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.addTo_claimValidity(cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidity)#phrase.action = add {0} to the Claim Validities of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.claimComplexity#phrase.action = set the Claim Complexity of {this} to {Claim Complexity}
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.claimComplexity#phrase.clearer = clear the Claim Complexity of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.claimComplexity#phrase.navigation = {Claim Complexity} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.claimEligibility#phrase.action = set the Claim Eligibilities of {this} to {Claim Eligibility}
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.claimEligibility#phrase.navigation = {Claim Eligibility} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.claimMedicalWastage#phrase.action = set the Claim Medical Wastages of {this} to {Claim Medical Wastage}
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.claimMedicalWastage#phrase.navigation = {Claim Medical Wastage} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.claimStatus#phrase.action = set the Claim Statuses of {this} to {Claim Status}
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.claimStatus#phrase.navigation = {Claim Status} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.claimValidity#phrase.action = set the Claim Validities of {this} to {Claim Validity}
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.claimValidity#phrase.navigation = {Claim Validity} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.clear_claimEligibility()#phrase.action = clear the Claim Eligibilities of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.clear_claimMedicalWastage()#phrase.action = clear the Claim Medical Wastages of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.clear_claimStatus()#phrase.action = clear the Claim Statuses of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.clear_claimValidity()#phrase.action = clear the Claim Validities of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.removeFrom_claimEligibility(cpadmin.claims_demo.claims_demo_service.datastructure.ClaimEligibility)#phrase.action = remove {0} from the Claim Eligibilities of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.removeFrom_claimMedicalWastage(cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability)#phrase.action = remove {0} from the Claim Medical Wastages of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.removeFrom_claimStatus(cpadmin.claims_demo.claims_demo_service.datastructure.ClaimStatus)#phrase.action = remove {0} from the Claim Statuses of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput.removeFrom_claimValidity(cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidity)#phrase.action = remove {0} from the Claim Validities of {this}
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode#concept.label = DiagCode
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode.$#instance.label = 3
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode.$$1#instance.label = 7.1
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode.$$61#instance.label = 8.61
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode.$$9#instance.label = 4.9
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode.$$91#instance.label = 7.9
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode.$1#instance.label = 5
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode.$11$3#instance.label = 211.3
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode.$24$8#instance.label = 824.8
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode.$35$5#instance.label = 535.5
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode.$50$90#instance.label = 550.90
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode.$53$9#instance.label = 553.9
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode.$55#instance.label = 455
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode.$55$6#instance.label = 455.6
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode.$61$01#instance.label = 361.01
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList#concept.label = Diagnosis Code List
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList.DiagnosisCodeList(boolean,cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode,cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode,cpadmin.claims_demo.claims_demo_service.datastructure.CostReasonableness,java.lang.String)#phrase.navigation = a new {Diagnosis Code List} where {0, CatastrophicIndicator} {1, Code} {2, Code2} {3, CostReasonableness} {4, Description}
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList.catastrophicIndicator#phrase.action[0] = {this} gets CatastrophicIndicator only if {CatastrophicIndicator}
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList.catastrophicIndicator#phrase.action[1] = make it {CatastrophicIndicator} that {this} is CatastrophicIndicator
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList.catastrophicIndicator#phrase.action[1].deprecated = true
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList.catastrophicIndicator#phrase.navigation = {this} is CatastrophicIndicator
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList.catastrophicIndicator#phrase.negative_predicate = {this} is not CatastrophicIndicator
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList.catastrophicIndicator#phrase.negative_predicate_setter = {this} does not get CatastrophicIndicator
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList.catastrophicIndicator#phrase.positive_predicate_setter = {this} gets CatastrophicIndicator
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList.code#phrase.action = set the Code of {this} to {Code}
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList.code#phrase.clearer = clear the Code of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList.code#phrase.navigation = {Code} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList.code2#phrase.action = set the Code2 of {this} to {Code2}
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList.code2#phrase.clearer = clear the Code2 of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList.code2#phrase.navigation = {Code2} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList.costReasonableness#phrase.action = set the CostReasonableness of {this} to {CostReasonableness}
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList.costReasonableness#phrase.clearer = clear the CostReasonableness of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList.costReasonableness#phrase.navigation = {CostReasonableness} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList.description#phrase.action = set the Description of {this} to {Description}
+cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList.description#phrase.navigation = {Description} of {this}
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.EarlyClaimIndicator
+cpadmin.claims_demo.claims_demo_service.datastructure.EarlyClaimIndicator#concept.label = Early Claim Indicator
+cpadmin.claims_demo.claims_demo_service.datastructure.EarlyClaimIndicator.earlyClaimIdentified#instance.label = Early Claim Identified
+cpadmin.claims_demo.claims_demo_service.datastructure.EarlyClaimIndicator.earlyClaimNotIdentified#instance.label = Early Claim Not Identified
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.Eligible$NotEligible
+cpadmin.claims_demo.claims_demo_service.datastructure.Eligible$NotEligible#concept.label = Eligible/NotEligible
+cpadmin.claims_demo.claims_demo_service.datastructure.Eligible$NotEligible.eligible#instance.label = Eligible
+cpadmin.claims_demo.claims_demo_service.datastructure.Eligible$NotEligible.notEligible#instance.label = Not Eligible
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.Exclusions
+cpadmin.claims_demo.claims_demo_service.datastructure.Exclusions#concept.label = Exclusions
+cpadmin.claims_demo.claims_demo_service.datastructure.Exclusions.cosmeticProcedureExclusion#instance.label = Cosmetic Procedure Exclusion
+cpadmin.claims_demo.claims_demo_service.datastructure.Exclusions.noExclusion#instance.label = No Exclusion
+cpadmin.claims_demo.claims_demo_service.datastructure.Exclusions.pre$ConditionsExclusion#instance.label = Pre-Conditions Exclusion
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.GeographicArea
+cpadmin.claims_demo.claims_demo_service.datastructure.GeographicArea#concept.label = GeographicArea
+cpadmin.claims_demo.claims_demo_service.datastructure.GeographicArea.USA#instance.label = USA
+cpadmin.claims_demo.claims_demo_service.datastructure.GeographicArea.canada#instance.label = Canada
+cpadmin.claims_demo.claims_demo_service.datastructure.GeographicArea.other#instance.label = Other
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.LengthOfStayPercentileList
+cpadmin.claims_demo.claims_demo_service.datastructure.LengthOfStayPercentileList#concept.label = Length of Stay Percentile List
+cpadmin.claims_demo.claims_demo_service.datastructure.LengthOfStayPercentileList.LengthOfStayPercentileList(double,double,double)#phrase.navigation = a new {Length of Stay Percentile List} where {0, Lengh of Stay 50th Percentile List} {1, Lengh of Stay 75th Percentile List} {2, Lengh of Stay 90th Percentile List}
+cpadmin.claims_demo.claims_demo_service.datastructure.LengthOfStayPercentileList.lenghOfStay50thPercentileList#phrase.action = set the Lengh of Stay 50th Percentile List of {this} to {Lengh of Stay 50th Percentile List}
+cpadmin.claims_demo.claims_demo_service.datastructure.LengthOfStayPercentileList.lenghOfStay50thPercentileList#phrase.addition_setter = add {Lengh of Stay 50th Percentile List} to the Lengh of Stay 50th Percentile List of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.LengthOfStayPercentileList.lenghOfStay50thPercentileList#phrase.navigation = {Lengh of Stay 50th Percentile List} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.LengthOfStayPercentileList.lenghOfStay50thPercentileList#phrase.subtraction_setter = subtract {Lengh of Stay 50th Percentile List} from the Lengh of Stay 50th Percentile List of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.LengthOfStayPercentileList.lenghOfStay75thPercentileList#phrase.action = set the Lengh of Stay 75th Percentile List of {this} to {Lengh of Stay 75th Percentile List}
+cpadmin.claims_demo.claims_demo_service.datastructure.LengthOfStayPercentileList.lenghOfStay75thPercentileList#phrase.addition_setter = add {Lengh of Stay 75th Percentile List} to the Lengh of Stay 75th Percentile List of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.LengthOfStayPercentileList.lenghOfStay75thPercentileList#phrase.navigation = {Lengh of Stay 75th Percentile List} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.LengthOfStayPercentileList.lenghOfStay75thPercentileList#phrase.subtraction_setter = subtract {Lengh of Stay 75th Percentile List} from the Lengh of Stay 75th Percentile List of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.LengthOfStayPercentileList.lenghOfStay90thPercentileList#phrase.action = set the Lengh of Stay 90th Percentile List of {this} to {Lengh of Stay 90th Percentile List}
+cpadmin.claims_demo.claims_demo_service.datastructure.LengthOfStayPercentileList.lenghOfStay90thPercentileList#phrase.addition_setter = add {Lengh of Stay 90th Percentile List} to the Lengh of Stay 90th Percentile List of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.LengthOfStayPercentileList.lenghOfStay90thPercentileList#phrase.navigation = {Lengh of Stay 90th Percentile List} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.LengthOfStayPercentileList.lenghOfStay90thPercentileList#phrase.subtraction_setter = subtract {Lengh of Stay 90th Percentile List} from the Lengh of Stay 90th Percentile List of {this}
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterCode
+cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterCode#concept.label = MedicalCenterCode
+cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterCode.$15#instance.label = 115
+cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterCode.$23#instance.label = 123
+cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterCode.$44#instance.label = 144
+cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterCode.$55#instance.label = 155
+cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterCode.$79#instance.label = 179
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterType
+cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterType#concept.label = MedicalCenterType
+cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterType.clinic#instance.label = Clinic
+cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterType.hospital#instance.label = Hospital
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.Policy
+cpadmin.claims_demo.claims_demo_service.datastructure.Policy#concept.label = Policy
+cpadmin.claims_demo.claims_demo_service.datastructure.Policy.Policy(cpadmin.claims_demo.claims_demo_service.datastructure.BenefitEligStatus,cpadmin.claims_demo.claims_demo_service.datastructure.CurrentClaim,cpadmin.claims_demo.claims_demo_service.datastructure.Exclusions,cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode)#phrase.navigation = a new {Policy} where {0, BenefitEligStatus} {1, CurrentClaim} {2, Exclusions} {3, ProductCode}
+cpadmin.claims_demo.claims_demo_service.datastructure.Policy.benefitEligStatus#phrase.action = set the BenefitEligStatus of {this} to {BenefitEligStatus}
+cpadmin.claims_demo.claims_demo_service.datastructure.Policy.benefitEligStatus#phrase.clearer = clear the BenefitEligStatus of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Policy.benefitEligStatus#phrase.navigation = {BenefitEligStatus} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Policy.currentClaim#phrase.action = set the CurrentClaim of {this} to {CurrentClaim}
+cpadmin.claims_demo.claims_demo_service.datastructure.Policy.currentClaim#phrase.clearer = clear the CurrentClaim of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Policy.currentClaim#phrase.navigation = {CurrentClaim} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Policy.exclusions#phrase.action = set the Exclusions of {this} to {Exclusions}
+cpadmin.claims_demo.claims_demo_service.datastructure.Policy.exclusions#phrase.clearer = clear the Exclusions of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Policy.exclusions#phrase.navigation = {Exclusions} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Policy.productCode#phrase.action = set the ProductCode of {this} to {ProductCode}
+cpadmin.claims_demo.claims_demo_service.datastructure.Policy.productCode#phrase.clearer = clear the ProductCode of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.Policy.productCode#phrase.navigation = {ProductCode} of {this}
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.PolicyAndBenefitEligibility
+cpadmin.claims_demo.claims_demo_service.datastructure.PolicyAndBenefitEligibility#concept.label = Policy and Benefit Eligibility
+cpadmin.claims_demo.claims_demo_service.datastructure.PolicyAndBenefitEligibility.eligible#instance.label = Eligible
+cpadmin.claims_demo.claims_demo_service.datastructure.PolicyAndBenefitEligibility.ineligible#instance.label = Ineligible
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.PolicyGeneralExclusions
+cpadmin.claims_demo.claims_demo_service.datastructure.PolicyGeneralExclusions#concept.label = Policy General Exclusions
+cpadmin.claims_demo.claims_demo_service.datastructure.PolicyGeneralExclusions.exclusionIdentified#instance.label = Exclusion Identified
+cpadmin.claims_demo.claims_demo_service.datastructure.PolicyGeneralExclusions.exclusionNotIdentified#instance.label = Exclusion Not Identified
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode#concept.label = ProductCode
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.AEC#instance.label = AEC
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.AEC2#instance.label = AEC2
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.AEC2N1#instance.label = AEC2N1
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.AEC2N2#instance.label = AEC2N2
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.AEC2N3#instance.label = AEC2N3
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.CP#instance.label = CP
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.CPN1#instance.label = CPN1
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.CPN2#instance.label = CPN2
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.CPN3#instance.label = CPN3
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.CPN4#instance.label = CPN4
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.CPN5#instance.label = CPN5
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.CPN6#instance.label = CPN6
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.HCP#instance.label = HCP
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.HCP1#instance.label = HCP1
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.HCP1N1#instance.label = HCP1N1
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.HCP1N2#instance.label = HCP1N2
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.HCP1N3#instance.label = HCP1N3
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.HCPN1#instance.label = HCPN1
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.HCPN2#instance.label = HCPN2
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.HCPN3#instance.label = HCPN3
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.HCPPE#instance.label = HCPPE
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.HTPR#instance.label = HTPR
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.HTPRN1#instance.label = HTPRN1
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.HTPRN2#instance.label = HTPRN2
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.HTPRN3#instance.label = HTPRN3
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.HTPRN4#instance.label = HTPRN4
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.HTPRN5#instance.label = HTPRN5
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.HTPRN6#instance.label = HTPRN6
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.JUHCP#instance.label = JUHCP
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.JUHCPN1#instance.label = JUHCPN1
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.JUHCPN2#instance.label = JUHCPN2
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.JUHCPN3#instance.label = JUHCPN3
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.JUHCPPE#instance.label = JUHCPPE
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MBC#instance.label = MBC
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MBCN1#instance.label = MBCN1
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MBCN2#instance.label = MBCN2
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MBCN3#instance.label = MBCN3
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MBCN4#instance.label = MBCN4
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MBCN5#instance.label = MBCN5
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MBCN6#instance.label = MBCN6
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MBCW#instance.label = MBCW
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MCP#instance.label = MCP
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MCP1#instance.label = MCP1
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MCP1N1#instance.label = MCP1N1
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MCP1N2#instance.label = MCP1N2
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MCP1N3#instance.label = MCP1N3
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MCPN1#instance.label = MCPN1
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MCPN2#instance.label = MCPN2
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MCPN3#instance.label = MCPN3
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MCPW#instance.label = MCPW
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MHC#instance.label = MHC
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MLP#instance.label = MLP
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MLPN1#instance.label = MLPN1
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MLPN2#instance.label = MLPN2
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MLPN3#instance.label = MLPN3
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MLPN4#instance.label = MLPN4
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MLPN5#instance.label = MLPN5
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MLPN6#instance.label = MLPN6
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MLPW#instance.label = MLPW
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.MSA#instance.label = MSA
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.PAB#instance.label = PAB
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.PMP#instance.label = PMP
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.PMPR#instance.label = PMPR
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.PMPRN1#instance.label = PMPRN1
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.PMPRN2#instance.label = PMPRN2
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.PMPRN3#instance.label = PMPRN3
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.PMPRN4#instance.label = PMPRN4
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.PMPRN5#instance.label = PMPRN5
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.PMPRN6#instance.label = PMPRN6
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.PMPRW#instance.label = PMPRW
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.PMPW#instance.label = PMPW
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.PPM#instance.label = PPM
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.RHC#instance.label = RHC
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.RHI#instance.label = RHI
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.RHIN1#instance.label = RHIN1
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.RHIN2#instance.label = RHIN2
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.RHIN3#instance.label = RHIN3
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.SCP#instance.label = SCP
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.SCPN1#instance.label = SCPN1
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.SCPN2#instance.label = SCPN2
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.SCPN3#instance.label = SCPN3
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.otherwise#instance.label = Otherwise
+cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode.p10A#instance.label = P10A
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.RedFlagCategoryList
+cpadmin.claims_demo.claims_demo_service.datastructure.RedFlagCategoryList#concept.label = Red Flag Category List
+cpadmin.claims_demo.claims_demo_service.datastructure.RedFlagCategoryList.RedFlagCategoryList(java.lang.String)#phrase.navigation = a new {Red Flag Category List} where {0, Category}
+cpadmin.claims_demo.claims_demo_service.datastructure.RedFlagCategoryList.category#phrase.action = set the Category of {this} to {Category}
+cpadmin.claims_demo.claims_demo_service.datastructure.RedFlagCategoryList.category#phrase.navigation = {Category} of {this}
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.Score
+cpadmin.claims_demo.claims_demo_service.datastructure.Score#concept.label = Score
+cpadmin.claims_demo.claims_demo_service.datastructure.Score.high#instance.label = High
+cpadmin.claims_demo.claims_demo_service.datastructure.Score.low#instance.label = Low
+cpadmin.claims_demo.claims_demo_service.datastructure.Score.moderate#instance.label = Moderate
+cpadmin.claims_demo.claims_demo_service.datastructure.Score.veryHigh#instance.label = Very High
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.SubType
+cpadmin.claims_demo.claims_demo_service.datastructure.SubType#concept.label = SubType
+cpadmin.claims_demo.claims_demo_service.datastructure.SubType.cosmetic#instance.label = Cosmetic
+cpadmin.claims_demo.claims_demo_service.datastructure.SubType.dental#instance.label = Dental
+cpadmin.claims_demo.claims_demo_service.datastructure.SubType.longTreatment#instance.label = Long Treatment
+cpadmin.claims_demo.claims_demo_service.datastructure.SubType.surgery#instance.label = Surgery
+cpadmin.claims_demo.claims_demo_service.datastructure.SubType.treatment#instance.label = Treatment
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryAssmts
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryAssmts#concept.label = SurgeryAssmts
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryAssmts.appropriate#instance.label = Appropriate
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryAssmts.none#instance.label = None
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryAssmts.questionable#instance.label = Questionable
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryCostPercentileList
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryCostPercentileList#concept.label = Surgery Cost Percentile List
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryCostPercentileList.SurgeryCostPercentileList(double,double,double)#phrase.navigation = a new {Surgery Cost Percentile List} where {0, Surgery Cost 50th Percentile List} {1, Surgery Cost 75th Percentile List} {2, Surgery Cost 90th Percentile List}
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryCostPercentileList.surgeryCost50thPercentileList#phrase.action = set the Surgery Cost 50th Percentile List of {this} to {Surgery Cost 50th Percentile List}
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryCostPercentileList.surgeryCost50thPercentileList#phrase.addition_setter = add {Surgery Cost 50th Percentile List} to the Surgery Cost 50th Percentile List of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryCostPercentileList.surgeryCost50thPercentileList#phrase.navigation = {Surgery Cost 50th Percentile List} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryCostPercentileList.surgeryCost50thPercentileList#phrase.subtraction_setter = subtract {Surgery Cost 50th Percentile List} from the Surgery Cost 50th Percentile List of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryCostPercentileList.surgeryCost75thPercentileList#phrase.action = set the Surgery Cost 75th Percentile List of {this} to {Surgery Cost 75th Percentile List}
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryCostPercentileList.surgeryCost75thPercentileList#phrase.addition_setter = add {Surgery Cost 75th Percentile List} to the Surgery Cost 75th Percentile List of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryCostPercentileList.surgeryCost75thPercentileList#phrase.navigation = {Surgery Cost 75th Percentile List} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryCostPercentileList.surgeryCost75thPercentileList#phrase.subtraction_setter = subtract {Surgery Cost 75th Percentile List} from the Surgery Cost 75th Percentile List of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryCostPercentileList.surgeryCost90thPercentileList#phrase.action = set the Surgery Cost 90th Percentile List of {this} to {Surgery Cost 90th Percentile List}
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryCostPercentileList.surgeryCost90thPercentileList#phrase.addition_setter = add {Surgery Cost 90th Percentile List} to the Surgery Cost 90th Percentile List of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryCostPercentileList.surgeryCost90thPercentileList#phrase.navigation = {Surgery Cost 90th Percentile List} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryCostPercentileList.surgeryCost90thPercentileList#phrase.subtraction_setter = subtract {Surgery Cost 90th Percentile List} from the Surgery Cost 90th Percentile List of {this}
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode#concept.label = SurgicalCode
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode.$017#instance.label = 0017
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode.$018#instance.label = 0018
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode.$021#instance.label = 0021
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode.$030#instance.label = 0030
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode.$138#instance.label = 1138
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode.$253#instance.label = 0253
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode.$254#instance.label = 0254
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode.$357#instance.label = 0357
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode.$406#instance.label = 1406
+cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode.$882#instance.label = 0882
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.System
+cpadmin.claims_demo.claims_demo_service.datastructure.System#concept.label = System
+cpadmin.claims_demo.claims_demo_service.datastructure.System.System(java.time.LocalDate)#phrase.navigation = a new {System} where {0, RunDate}
+cpadmin.claims_demo.claims_demo_service.datastructure.System.runDate#phrase.action = set the RunDate of {this} to {RunDate}
+cpadmin.claims_demo.claims_demo_service.datastructure.System.runDate#phrase.navigation = {RunDate} of {this}
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode#concept.label = TreatmentCode
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode.$151#instance.label = 1151
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode.$170#instance.label = 1170
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode.$171#instance.label = 1171
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode.$253#instance.label = 0253
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode.$254#instance.label = 0254
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode.$357#instance.label = 0357
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode.$679#instance.label = 0679
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode.$845#instance.label = 0845
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode.$882#instance.label = 0882
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList#concept.documentation = 
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList#concept.label = Treatment Code List
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList.TreatmentCodeList(cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode,double,double,cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryAssmts,cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode)#phrase.navigation = a new {Treatment Code List} where {0, Code} {1, Cost} {2, Severity} {3, SurgeryAssmts} {4, SurgicalCode}
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList.code#phrase.action = set the Code of {this} to {Code}
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList.code#phrase.clearer = clear the Code of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList.code#phrase.navigation = {Code} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList.cost#phrase.action = set the Cost of {this} to {Cost}
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList.cost#phrase.addition_setter = add {Cost} to the Cost of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList.cost#phrase.navigation = {Cost} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList.cost#phrase.subtraction_setter = subtract {Cost} from the Cost of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList.severity#phrase.action = set the Severity of {this} to {Severity}
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList.severity#phrase.addition_setter = add {Severity} to the Severity of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList.severity#phrase.navigation = {Severity} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList.severity#phrase.subtraction_setter = subtract {Severity} from the Severity of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList.surgeryAssmts#phrase.action = set the SurgeryAssmts of {this} to {SurgeryAssmts}
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList.surgeryAssmts#phrase.clearer = clear the SurgeryAssmts of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList.surgeryAssmts#phrase.navigation = {SurgeryAssmts} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList.surgicalCode#phrase.action = set the SurgicalCode of {this} to {SurgicalCode}
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList.surgicalCode#phrase.clearer = clear the SurgicalCode of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList.surgicalCode#phrase.navigation = {SurgicalCode} of {this}
+
+# cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentComplexity
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentComplexity#concept.label = Complexity
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentComplexity.TreatmentComplexity(java.lang.String,cpadmin.claims_demo.claims_demo_service.datastructure.Score)#phrase.navigation = a new {Complexity} where {0, Message} {1, Output}
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentComplexity.message#phrase.action = set the Message of {this} to {Message}
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentComplexity.message#phrase.navigation = {Message} of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentComplexity.output#phrase.action = set the Output of {this} to {Output}
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentComplexity.output#phrase.clearer = clear the Output of {this}
+cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentComplexity.output#phrase.navigation = {Output} of {this}

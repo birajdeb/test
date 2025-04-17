@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Maximum Severity of Listed Treatment Code</name>
+  <uuid>d9e1b8b3-5c6a-4f64-8570-75e222d77b6d</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[ definitions 
+	set 'Maximum' to a number in 'Maximum Severity of Listed Treatment Codes' , sorted in ascending order ; 
+    then 
+	set decision to max ( Maximum , 0 ) ; 
+    ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

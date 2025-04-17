@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Inovatec Loan Recommended">
-  <name>Inovatec Loan Recommended</name>
-  <uuid>264233f4-53ac-4de2-a6ab-2c8c85436cc2</uuid>
-  <decisionModel href="../rules/decisionModel.dmo#9fed43f5-2f27-405f-b029-91132d7534d5"/>
-  <targetRuleProject href="../../Inovatec%20Loan%20Recommended#923686b2-3517-4005-b71d-caa4e312f5c6"/>
-</com.ibm.rules.studio.model.decisionservice:Operation>

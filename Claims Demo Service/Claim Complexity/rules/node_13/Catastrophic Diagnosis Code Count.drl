@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Catastrophic Diagnosis Code Count</name>
+  <uuid>7e092f85-256f-4d37-92ec-f8f030e3a443</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[ definitions 
+	set 'variable1' to all Scores in 'Comorbidity Complexity' ,  deducting { Low , Moderate } ;
+     
+if 
+	 'Comorbidity Complexity'  contain Low or 'Comorbidity Complexity' contain Moderate 
+    then 
+    set decision to the number of elements in variable1;
+    
+else 
+	set decision to the number of elements in 'Comorbidity Complexity' ; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

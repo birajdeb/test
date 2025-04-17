@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Past 12 Months Claim Collect</name>
+  <uuid>22cd6260-030b-4f8d-a6b9-e43e977d427e</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[ definitions 
+	set 'variable1' to a Claim in Claims  ; 
+    then 
+	add the PrevClaimsSubmitted of variable1 to decision ; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>ec61ca64-6020-4d2a-8d08-5ccb7a1e69d0</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="Claims">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Claim" collection="true" name="Claims"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="Claims" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.Claim[]"/>
+    </inputData>
+    <decision id="node_1" name="Claim Status">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Claim" collection="true" name="Claims"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList" collection="true" name="Treatment Code List"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList" collection="true" name="Diagnosis Code List"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Policy" collection="false" name="Policy"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.System" collection="false" name="system"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Benefits" collection="false" name="Benefits"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimStatus" collection="true" name="Claim Status"/>
+                <rule defaultRule="false" href="node_1/Claim%20Status.dmt" kind="DecisionTable" name="Claim Status"/>
+                <rule defaultRule="true" href="node_1/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Claim Status" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimStatus[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_7"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_8"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_10"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_9"/>
+        </informationRequirement>
+        <knowledgeRequirement>
+            <requiredKnowledge href="#node_2"/>
+        </knowledgeRequirement>
+        <knowledgeRequirement>
+            <requiredKnowledge href="#node_3"/>
+        </knowledgeRequirement>
+        <knowledgeRequirement>
+            <requiredKnowledge href="#node_4"/>
+        </knowledgeRequirement>
+        <knowledgeRequirement>
+            <requiredKnowledge href="#node_5"/>
+        </knowledgeRequirement>
+    </decision>
+    <inputData id="node_6" name="Treatment Code List">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList" collection="true" name="Treatment Code List"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_6_ii" name="Treatment Code List" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList[]"/>
+    </inputData>
+    <inputData id="node_7" name="Diagnosis Code List">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList" collection="true" name="Diagnosis Code List"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_7_ii" name="Diagnosis Code List" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList[]"/>
+    </inputData>
+    <inputData id="node_8" name="Policy">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Policy" collection="false" name="Policy"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_8_ii" name="Policy" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.Policy"/>
+    </inputData>
+    <inputData id="node_9" name="Benefits">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Benefits" collection="false" name="Benefits"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_9_ii" name="Benefits" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.Benefits"/>
+    </inputData>
+    <inputData id="node_10" name="system">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.System" collection="false" name="system"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_10_ii" name="system" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.System"/>
+    </inputData>
+    <businessKnowledgeModel id="node_2" name="Claim Complexity">
+        <extensionElements>
+            <properties xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <property name="ads.designer.bkKind"><![CDATA[decision]]></property>
+            </properties>
+        </extensionElements>
+        <variable name="Claim Complexity" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.Score"/>
+        <encapsulatedLogic typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.Score">
+            <formalParameter name="claims" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.Claim[]"/>
+            <formalParameter name="treatmentCodeList" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList[]"/>
+            <formalParameter name="diagnosisCodeList" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList[]"/>
+            <context>
+                <contextEntry>
+                    <variable name="class"/>
+                    <literalExpression>
+                        <text>"cpadmin.claims_demo.claims_demo_service.claimcomplexity.Claim_Complexity"</text>
+                    </literalExpression>
+                </contextEntry>
+                <contextEntry>
+                    <variable name="method signature"/>
+                    <literalExpression>
+                        <text>"run(java.util.List,java.util.List,java.util.List)"</text>
+                    </literalExpression>
+                </contextEntry>
+            </context>
+        </encapsulatedLogic>
+    </businessKnowledgeModel>
+    <businessKnowledgeModel id="node_3" name="Claim Validity">
+        <extensionElements>
+            <properties xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <property name="ads.designer.bkKind"><![CDATA[decision]]></property>
+            </properties>
+        </extensionElements>
+        <variable name="Claim Validity" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidity[]"/>
+        <encapsulatedLogic typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidity[]">
+            <formalParameter name="claims" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.Claim[]"/>
+            <formalParameter name="policy" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.Policy"/>
+            <formalParameter name="system" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.System"/>
+            <context>
+                <contextEntry>
+                    <variable name="class"/>
+                    <literalExpression>
+                        <text>"cpadmin.claims_demo.claims_demo_service.claimvalidity.Claim_Validity"</text>
+                    </literalExpression>
+                </contextEntry>
+                <contextEntry>
+                    <variable name="method signature"/>
+                    <literalExpression>
+                        <text>"run(java.util.List,cpadmin.claims_demo.claims_demo_service.datastructure.Policy,cpadmin.claims_demo.claims_demo_service.datastructure.System)"</text>
+                    </literalExpression>
+                </contextEntry>
+            </context>
+        </encapsulatedLogic>
+    </businessKnowledgeModel>
+    <businessKnowledgeModel id="node_4" name="Claim Wastage">
+        <extensionElements>
+            <properties xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <property name="ads.designer.bkKind"><![CDATA[decision]]></property>
+            </properties>
+        </extensionElements>
+        <variable name="Claim Wastage" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability[]"/>
+        <encapsulatedLogic typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability[]">
+            <formalParameter name="treatmentCodeList" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList[]"/>
+            <formalParameter name="diagnosisCodeList" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList[]"/>
+            <formalParameter name="claims" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.Claim[]"/>
+            <formalParameter name="benefits" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.Benefits"/>
+            <context>
+                <contextEntry>
+                    <variable name="class"/>
+                    <literalExpression>
+                        <text>"cpadmin.claims_demo.claims_demo_service.claimwastage.Claim_Wastage"</text>
+                    </literalExpression>
+                </contextEntry>
+                <contextEntry>
+                    <variable name="method signature"/>
+                    <literalExpression>
+                        <text>"run(java.util.List,java.util.List,java.util.List,cpadmin.claims_demo.claims_demo_service.datastructure.Benefits)"</text>
+                    </literalExpression>
+                </contextEntry>
+            </context>
+        </encapsulatedLogic>
+    </businessKnowledgeModel>
+    <businessKnowledgeModel id="node_5" name="Claim Eligibility">
+        <extensionElements>
+            <properties xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <property name="ads.designer.bkKind"><![CDATA[decision]]></property>
+            </properties>
+        </extensionElements>
+        <variable name="Claim Eligibility" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimEligibility[]"/>
+        <encapsulatedLogic typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimEligibility[]">
+            <formalParameter name="policy" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.Policy"/>
+            <formalParameter name="claims" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.Claim[]"/>
+            <formalParameter name="diagnosisCodeList" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList[]"/>
+            <context>
+                <contextEntry>
+                    <variable name="class"/>
+                    <literalExpression>
+                        <text>"cpadmin.claims_demo.claims_demo_service.claimeligibility.Claim_Eligibility"</text>
+                    </literalExpression>
+                </contextEntry>
+                <contextEntry>
+                    <variable name="method signature"/>
+                    <literalExpression>
+                        <text>"run(cpadmin.claims_demo.claims_demo_service.datastructure.Policy,java.util.List,java.util.List)"</text>
+                    </literalExpression>
+                </contextEntry>
+            </context>
+        </encapsulatedLogic>
+    </businessKnowledgeModel>
+</definitions>
+</definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

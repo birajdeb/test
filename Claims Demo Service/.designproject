@@ -1,0 +1,10 @@
+{
+  "description" : "",
+  "groupId" : "birajdeb_bluepolaris.com.demo_test.claims_demo_service",
+  "locale" : "en_US",
+  "properties" : {
+    "refactoringEnabled" : false,
+    "tags" : [ ]
+  },
+  "extraProperties" : { }
+}

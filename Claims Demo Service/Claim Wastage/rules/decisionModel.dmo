@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>495165b1-8e1e-49c9-99d0-fdc81036acff</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="Treatment Code List">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList" collection="true" name="Treatment Code List"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="Treatment Code List" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList[]"/>
+    </inputData>
+    <decision id="node_1" name="Treatment Code">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList" collection="true" name="Treatment Code List"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode" collection="true" name="Treatment Code"/>
+                <rule defaultRule="false" href="node_1/Treatment%20Code%20Count.drl" kind="BusinessRule" name="Treatment Code Count"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Treatment Code" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_2" name="Treatment Code Count">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode" collection="true" name="Treatment Code"/>
+                <output bomType="java.lang.Double" collection="false" name="Treatment Code Count"/>
+                <rule defaultRule="false" href="node_2/Treatment%20Code%20Count.drl" kind="BusinessRule" name="Treatment Code Count"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_2_ii" name="Treatment Code Count" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_3" name="Treatment Surgical Code Assessment">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList" collection="true" name="Treatment Code List"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList" collection="true" name="Diagnosis Code List"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryAssmts" collection="true" name="Treatment Surgical Code Assessment"/>
+                <rule defaultRule="false" href="node_3/Treatment%20Surgical%20Code%20Assessment.dmt" kind="DecisionTable" name="Treatment Surgical Code Assessment"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_3_ii" name="Treatment Surgical Code Assessment" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryAssmts[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_4" name="Diagnosis Code List">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList" collection="true" name="Diagnosis Code List"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_4_ii" name="Diagnosis Code List" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList[]"/>
+    </inputData>
+    <decision id="node_5" name="Treatment Appropriateness">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="Treatment Code Count"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryAssmts" collection="true" name="Treatment Surgical Code Assessment"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryAssmts" collection="true" name="Treatment Appropriateness"/>
+                <rule defaultRule="false" href="node_5/Treatment%20Appropriateness.dmt" kind="DecisionTable" name="Treatment Appropriateness"/>
+                <rule defaultRule="true" href="node_5/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_5_ii" name="Treatment Appropriateness" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryAssmts[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_6" name="Claims">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Claim" collection="true" name="Claims"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_6_ii" name="Claims" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.Claim[]"/>
+    </inputData>
+    <decision id="node_7" name="Surgery Cost Percentile List">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList" collection="true" name="Treatment Code List"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Claim" collection="true" name="Claims"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryCostPercentileList" collection="true" name="Surgery Cost Percentile List"/>
+                <rule defaultRule="false" href="node_7/Surgery%20Cost%20Percentile%20List.dmt" kind="DecisionTable" name="Surgery Cost Percentile List"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_7_ii" name="Surgery Cost Percentile List" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryCostPercentileList[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_8" name="Claim Cost Reasonableness">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Claim" collection="true" name="Claims"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryCostPercentileList" collection="true" name="Surgery Cost Percentile List"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimCostReasonableness" collection="false" name="Claim Cost Reasonableness"/>
+                <rule defaultRule="false" href="node_8/Claim%20Cost%20Reasonableness.dmt" kind="DecisionTable" name="Claim Cost Reasonableness"/>
+                <rule defaultRule="true" href="node_8/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_8_ii" name="Claim Cost Reasonableness" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimCostReasonableness"/>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_7"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_9" name="Length of Stay Percentile List">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList" collection="true" name="Treatment Code List"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList" collection="true" name="Diagnosis Code List"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.LengthOfStayPercentileList" collection="true" name="Length of Stay Percentile List"/>
+                <rule defaultRule="false" href="node_9/Length%20of%20Stay%20Percentile%20List.dmt" kind="DecisionTable" name="Length of Stay Percentile List"/>
+                <rule defaultRule="true" href="node_9/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_9_ii" name="Length of Stay Percentile List" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.LengthOfStayPercentileList[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_10" name="Claim Length of Stay Reasonability">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Claim" collection="true" name="Claims"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.LengthOfStayPercentileList" collection="true" name="Length of Stay Percentile List"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.CostReasonableness" collection="true" name="Claim Length of Stay Reasonability"/>
+                <rule defaultRule="false" href="node_10/Claim%20Length%20of%20Stay%20Reasonability.dmt" kind="DecisionTable" name="Claim Length of Stay Reasonability"/>
+                <rule defaultRule="true" href="node_10/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_10_ii" name="Claim Length of Stay Reasonability" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.CostReasonableness[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_9"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_11" name="Claim Medical Wastage Acceptability List">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList" collection="true" name="Diagnosis Code List"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryAssmts" collection="true" name="Treatment Appropriateness"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Benefits" collection="false" name="Benefits"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.CostReasonableness" collection="true" name="Claim Length of Stay Reasonability"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimCostReasonableness" collection="false" name="Claim Cost Reasonableness"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptabilityList" collection="true" name="Claim Medical Wastage Acceptability List"/>
+                <rule defaultRule="false" href="node_11/Claim%20Medical%20Wastage%20Acceptability%20List.dmt" kind="DecisionTable" name="Claim Medical Wastage Acceptability List"/>
+                <rule defaultRule="true" href="node_11/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_11_ii" name="Claim Medical Wastage Acceptability List" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptabilityList[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_12"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_10"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_8"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_12" name="Benefits">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Benefits" collection="false" name="Benefits"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_12_ii" name="Benefits" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.Benefits"/>
+    </inputData>
+    <decision id="node_13" name="Claim Medical Wastage">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptabilityList" collection="true" name="Claim Medical Wastage Acceptability List"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability" collection="true" name="Claim Medical Wastage"/>
+                <rule defaultRule="false" href="node_13/Claim%20Medical%20Wastage.dmt" kind="DecisionTable" name="Claim Medical Wastage"/>
+                <rule defaultRule="false" href="node_13/Distinct%20Function.drl" kind="BusinessRule" name="Distinct Function"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_13_ii" name="Claim Medical Wastage" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_11"/>
+        </informationRequirement>
+    </decision>
+</definitions>
+</definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Maximum Severity of Listed Treatment Codes</name>
+  <uuid>93b79f6c-87e7-4128-873e-e6d6a7390964</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[definitions 
+
+	set 'Treatment' to a Treatment Code List in 'Treatment Code List' ;
+     then 
+	add   the Severity of Treatment  to decision ; 
+]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

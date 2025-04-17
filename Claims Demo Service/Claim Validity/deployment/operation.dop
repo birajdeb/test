@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Claim Validity">
+  <name>Claim_Validity</name>
+  <uuid>198f250f-cbad-4bcd-9109-1fb9d5066f26</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#0a92d216-65a5-4c88-b085-3a90c5ffa37b"/>
+  <targetRuleProject href="../../Claim%20Validity#167dfad1-da3b-4c23-9a31-4851e7ff0d27"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

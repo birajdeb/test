@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Claim Eligibility">
+  <name>Claim_Eligibility</name>
+  <uuid>eb44ab90-f0ac-439c-99bd-6df1da3ca5fd</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#54296b49-3f5f-4dc6-9369-cce734662e7b"/>
+  <targetRuleProject href="../../Claim%20Eligibility#7106d71f-7f0e-485a-98f9-26d32f9f2172"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

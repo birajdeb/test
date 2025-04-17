@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Treatment Code Count</name>
+  <uuid>40334e70-fda8-46d6-88c5-0184cb7ae6ba</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[  definitions 
+	set 'Treatment Code' to   a Treatment Code List in 'Treatment Code List'   ; 
+     then 
+	add the Code of 'Treatment Code' to  decision ; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

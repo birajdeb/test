@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>0a92d216-65a5-4c88-b085-3a90c5ffa37b</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="Claims">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Claim" collection="true" name="Claims"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="Claims" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.Claim[]"/>
+    </inputData>
+    <decision id="node_1" name="Claim Amount Eligibility">
+        <description>Is the monetary value of this claim eligible?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Claim" collection="true" name="Claims"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimAmountEligibility" collection="true" name="Claim Amount Eligibility"/>
+                <rule defaultRule="false" href="node_1/Claim%20Amount%20Eligibility.dmt" kind="DecisionTable" name="Claim Amount Eligibility"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Claim Amount Eligibility" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimAmountEligibility[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_2" name="Claim Non Disclosure Score Status">
+        <description>What is the Claim Non-Disclosure Score Status</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Claim" collection="true" name="Claims"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Score" collection="true" name="Claim Non Disclosure Score Status"/>
+                <rule defaultRule="false" href="node_2/Claim%20Non-Disclosure%20Score%20Status.dmt" kind="DecisionTable" name="Claim Non-Disclosure Score Status"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_2_ii" name="Claim Non Disclosure Score Status" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.Score[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_3" name="Claim Unstructured Data">
+        <description>Is the Claim Unstructured Data or not?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Claim" collection="true" name="Claims"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimUnstructuredData" collection="true" name="Claim Unstructured Data"/>
+                <rule defaultRule="false" href="node_3/Claim%20Unstructured%20Data.dmt" kind="DecisionTable" name="Claim Unstructured Data"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_3_ii" name="Claim Unstructured Data" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimUnstructuredData[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_4" name="Policy">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Policy" collection="false" name="Policy"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_4_ii" name="Policy" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.Policy"/>
+    </inputData>
+    <decision id="node_5" name="Policy General Exclusions">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Claim" collection="true" name="Claims"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Policy" collection="false" name="Policy"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.PolicyGeneralExclusions" collection="true" name="Policy General Exclusions"/>
+                <rule defaultRule="false" href="node_5/Policy%20General%20Exclusions.dmt" kind="DecisionTable" name="Policy General Exclusions"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_5_ii" name="Policy General Exclusions" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.PolicyGeneralExclusions[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_6" name="Policy and Benefit Eligibility">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Policy" collection="false" name="Policy"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.PolicyAndBenefitEligibility" collection="false" name="Policy and Benefit Eligibility"/>
+                <rule defaultRule="false" href="node_6/Policy%20and%20Benefit%20Eligibility.dmt" kind="DecisionTable" name="Policy and Benefit Eligibility"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_6_ii" name="Policy and Benefit Eligibility" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.PolicyAndBenefitEligibility"/>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_7" name="Claim Age in Days">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Claim" collection="true" name="Claims"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.System" collection="false" name="System"/>
+                <output bomType="java.lang.Double" collection="true" name="Claim Age in Days"/>
+                <rule defaultRule="false" href="node_7/Claim%20Age%20in%20Days.drl" kind="BusinessRule" name="Claim Age in Days"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_7_ii" name="Claim Age in Days" typeRef="java.lang.Double[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_10"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_8" name="Early Claim Indicator">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="true" name="Claim Age in Days"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.EarlyClaimIndicator" collection="true" name="Early Claim Indicator"/>
+                <rule defaultRule="false" href="node_8/Early%20Claim%20Indicator.dmt" kind="DecisionTable" name="Early Claim Indicator"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_8_ii" name="Early Claim Indicator" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.EarlyClaimIndicator[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_7"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_9" name="Claim Validity">
+        <description>Is this claim valid?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Claim" collection="true" name="Claims"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimAmountEligibility" collection="true" name="Claim Amount Eligibility"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Score" collection="true" name="Claim Non Disclosure Score Status"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimUnstructuredData" collection="true" name="Claim Unstructured Data"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.PolicyGeneralExclusions" collection="true" name="Policy General Exclusions"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.PolicyAndBenefitEligibility" collection="false" name="Policy and Benefit Eligibility"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.EarlyClaimIndicator" collection="true" name="Early Claim Indicator"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidity" collection="true" name="Claim Validity"/>
+                <rule defaultRule="false" href="node_9/Claim%20Validity.dmt" kind="DecisionTable" name="Claim Validity"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_9_ii" name="Claim Validity" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidity[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_8"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_10" name="System">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.System" collection="false" name="System"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_10_ii" name="System" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.System"/>
+    </inputData>
+</definitions>
+</definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

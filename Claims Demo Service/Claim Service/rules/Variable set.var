@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:VariableSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore" language="ARL">
+  <name>Variable set</name>
+  <uuid>8e38cc89-a789-463f-a1bb-cc03e5fe4a27</uuid>
+  <variables name="Claims" type="java.util.List&lt;cpadmin.claims_demo.claims_demo_service.datastructure.Claim>" initialValue="" verbalization="the Claims" jsonName=""/>
+  <variables name="TreatmentCodeList" type="java.util.List&lt;cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList>" initialValue="" verbalization="the Treatment Code List" jsonName=""/>
+  <variables name="DiagnosisCodeList" type="java.util.List&lt;cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList>" initialValue="" verbalization="the Diagnosis Code List" jsonName=""/>
+  <variables name="Policy" type="cpadmin.claims_demo.claims_demo_service.datastructure.Policy" initialValue="" verbalization="the Policy" jsonName=""/>
+  <variables name="System" type="cpadmin.claims_demo.claims_demo_service.datastructure.System" initialValue="" verbalization="the System" jsonName=""/>
+  <variables name="Benefits" type="cpadmin.claims_demo.claims_demo_service.datastructure.Benefits" initialValue="" verbalization="the Benefits" jsonName=""/>
+  <variables name="ClaimComplexity" type="cpadmin.claims_demo.claims_demo_service.datastructure.Score" initialValue="" verbalization="the Claim Complexity" jsonName=""/>
+  <variables name="ClaimValidity" type="java.util.List&lt;cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidity>" initialValue="" verbalization="the Claim Validity" jsonName=""/>
+  <variables name="ClaimMedicalWastage" type="java.util.List&lt;cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability>" initialValue="" verbalization="the Claim Medical Wastage" jsonName=""/>
+  <variables name="ClaimEligibility" type="java.util.List&lt;cpadmin.claims_demo.claims_demo_service.datastructure.ClaimEligibility>" initialValue="" verbalization="the Claim Eligibility" jsonName=""/>
+  <variables name="ClaimStatus" type="java.util.List&lt;cpadmin.claims_demo.claims_demo_service.datastructure.ClaimStatus>" initialValue="" verbalization="the Claim Status" jsonName=""/>
+  <variables name="DecisionOutput" type="cpadmin.claims_demo.claims_demo_service.datastructure.DecisionOutput" initialValue="" verbalization="the Decision Output" jsonName=""/>
+</ilog.rules.studio.model.base:VariableSet>

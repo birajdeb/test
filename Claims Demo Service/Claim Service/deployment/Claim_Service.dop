@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="Claim_Service" usingRuleflow="true" ruleflowName="Ruleflow" targetRuleProjectName="Claim Service">
+  <name>Claim_Service</name>
+  <uuid>380b6b4b-1f7e-4df1-999b-1f7ec00764fe</uuid>
+  <referencedVariables variableName="Claims" variableSetName="Variable set">
+    <variableSet href="../rules/Variable%20set.var#8e38cc89-a789-463f-a1bb-cc03e5fe4a27"/>
+  </referencedVariables>
+  <referencedVariables variableName="TreatmentCodeList" variableSetName="Variable set">
+    <variableSet href="../rules/Variable%20set.var#8e38cc89-a789-463f-a1bb-cc03e5fe4a27"/>
+  </referencedVariables>
+  <referencedVariables variableName="DiagnosisCodeList" variableSetName="Variable set">
+    <variableSet href="../rules/Variable%20set.var#8e38cc89-a789-463f-a1bb-cc03e5fe4a27"/>
+  </referencedVariables>
+  <referencedVariables variableName="Policy" variableSetName="Variable set">
+    <variableSet href="../rules/Variable%20set.var#8e38cc89-a789-463f-a1bb-cc03e5fe4a27"/>
+  </referencedVariables>
+  <referencedVariables variableName="System" variableSetName="Variable set">
+    <variableSet href="../rules/Variable%20set.var#8e38cc89-a789-463f-a1bb-cc03e5fe4a27"/>
+  </referencedVariables>
+  <referencedVariables variableName="DecisionOutput" variableSetName="Variable set" direction="OUT">
+    <variableSet href="../rules/Variable%20set.var#8e38cc89-a789-463f-a1bb-cc03e5fe4a27"/>
+  </referencedVariables>
+  <referencedVariables variableName="Benefits" variableSetName="Variable set">
+    <variableSet href="../rules/Variable%20set.var#8e38cc89-a789-463f-a1bb-cc03e5fe4a27"/>
+  </referencedVariables>
+  <ruleflow href="../rules/Ruleflow.rfl#3db637c6-20f7-4171-bc61-53b535ec0f50"/>
+  <targetRuleProject href="../../Claim%20Service#2e4b74db-08ff-444f-848d-e2ef73149e80"/>
+  <tags key="operationDescription">
+    <value><![CDATA[""]]></value>
+  </tags>
+  <tags key="operationName">
+    <value><![CDATA["Claim_Service_Claim_Service"]]></value>
+  </tags>
+  <tags key="exposedAtRuntime">
+    <value><![CDATA[true]]></value>
+  </tags>
+</com.ibm.rules.studio.model.decisionservice:Operation>

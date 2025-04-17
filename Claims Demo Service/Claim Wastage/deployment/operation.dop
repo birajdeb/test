@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Claim Wastage">
+  <name>Claim_Wastage</name>
+  <uuid>4602b6c2-1505-44f5-87e5-e5af1afbd14d</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#495165b1-8e1e-49c9-99d0-fdc81036acff"/>
+  <targetRuleProject href="../../Claim%20Wastage#11a921ae-c0de-4fae-b9c1-ce0504299b5d"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

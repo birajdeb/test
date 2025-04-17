@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.ruleflow:RuleFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.ruleflow="http://ilog.rules.studio/model/ruleflow.ecore">
+  <name>Ruleflow</name>
+  <uuid>3db637c6-20f7-4171-bc61-53b535ec0f50</uuid>
+  <locale>en_US</locale>
+  <rfModel><Ruleflow xmlns="http://schemas.ilog.com/Rules/7.0/Ruleflow">
+    <Body>
+        <TaskList>
+            <StartTask Identifier="task_0"/>
+            <StopTask Identifier="task_2"/>
+            <FunctionTask Identifier="task_3">
+                <FinalActions Language="bal"><![CDATA[ set 'the Decision Output' to a new Decision Output where 
+ 
+	the Claim Complexity is 'the Claim Complexity' ;]]></FinalActions>
+                <Invocation FunctionIdentifier="cpadmin.claims_demo.claims_demo_service.claimcomplexity.Claim_Complexity">
+                    <InputBindings>
+                        <Binding Language="bal" Name="claims"><![CDATA['the Claims' ]]></Binding>
+                        <Binding Language="bal" Name="treatmentCodeList"><![CDATA['the Treatment Code List' ]]></Binding>
+                        <Binding Language="bal" Name="diagnosisCodeList"><![CDATA['the Diagnosis Code List' ]]></Binding>
+                    </InputBindings>
+                    <OutputBindings>
+                        <Binding Language="bal" Name="ClaimComplexity"><![CDATA[ 'claim complexity' ]]></Binding>
+                    </OutputBindings>
+                </Invocation>
+            </FunctionTask>
+            <FunctionTask Identifier="task_4">
+                <FinalActions Language="bal"><![CDATA[set the Claim Medical Wastages of 'the Decision Output' to 'the Claim Medical Wastage'; ]]></FinalActions>
+                <Invocation FunctionIdentifier="cpadmin.claims_demo.claims_demo_service.claimwastage.Claim_Wastage">
+                    <InputBindings>
+                        <Binding Language="bal" Name="treatmentCodeList"><![CDATA[ 'the Treatment Code List' ]]></Binding>
+                        <Binding Language="bal" Name="diagnosisCodeList"><![CDATA[ 'the Diagnosis Code List' ]]></Binding>
+                        <Binding Language="bal" Name="claims"><![CDATA[ 'the Claims' ]]></Binding>
+                        <Binding Language="bal" Name="benefits"><![CDATA[ 'the Benefits' ]]></Binding>
+                    </InputBindings>
+                    <OutputBindings>
+                        <Binding Language="bal" Name="ClaimMedicalWastage"><![CDATA['claim wastage' ]]></Binding>
+                    </OutputBindings>
+                </Invocation>
+            </FunctionTask>
+            <FunctionTask Identifier="task_5">
+                <FinalActions Language="bal"><![CDATA[ set the Claim Eligibilities of 'the Decision Output' to 'the Claim Eligibility'; ]]></FinalActions>
+                <Invocation FunctionIdentifier="cpadmin.claims_demo.claims_demo_service.claimeligibility.Claim_Eligibility">
+                    <InputBindings>
+                        <Binding Language="bal" Name="policy"><![CDATA[ 'the Policy' ]]></Binding>
+                        <Binding Language="bal" Name="claims"><![CDATA[ 'the Claims' ]]></Binding>
+                        <Binding Language="bal" Name="diagnosisCodeList"><![CDATA[ 'the Diagnosis Code List' ]]></Binding>
+                    </InputBindings>
+                    <OutputBindings>
+                        <Binding Language="bal" Name="ClaimEligibility"><![CDATA[ 'claim eligibility' ]]></Binding>
+                    </OutputBindings>
+                </Invocation>
+            </FunctionTask>
+            <FunctionTask Identifier="task_6">
+                <FinalActions Language="bal"><![CDATA[set the Claim Validities of 'the Decision Output' to 'the Claim Validity'; ]]></FinalActions>
+                <Invocation FunctionIdentifier="cpadmin.claims_demo.claims_demo_service.claimvalidity.Claim_Validity">
+                    <InputBindings>
+                        <Binding Language="bal" Name="claims"><![CDATA[ 'the Claims' ]]></Binding>
+                        <Binding Language="bal" Name="policy"><![CDATA[ 'the Policy' ]]></Binding>
+                        <Binding Language="bal" Name="system"><![CDATA[ 'the System' ]]></Binding>
+                    </InputBindings>
+                    <OutputBindings>
+                        <Binding Language="bal" Name="ClaimValidity"><![CDATA[ 'claim validity' ]]></Binding>
+                    </OutputBindings>
+                </Invocation>
+            </FunctionTask>
+            <FunctionTask Identifier="task_7">
+                <FinalActions Language="bal"><![CDATA[set the Claim Statuses of 'the Decision Output' to 'the Claim Status' , made distinct ; ]]></FinalActions>
+                <Invocation FunctionIdentifier="cpadmin.claims_demo.claims_demo_service.claimscontext.Claims_Context">
+                    <InputBindings>
+                        <Binding Language="bal" Name="claims"><![CDATA['the Claims' ]]></Binding>
+                        <Binding Language="bal" Name="treatmentCodeList"><![CDATA['the Treatment Code List' ]]></Binding>
+                        <Binding Language="bal" Name="diagnosisCodeList"><![CDATA['the Diagnosis Code List' ]]></Binding>
+                        <Binding Language="bal" Name="policy"><![CDATA['the Policy' ]]></Binding>
+                        <Binding Language="bal" Name="benefits"><![CDATA['the Benefits' ]]></Binding>
+                        <Binding Language="bal" Name="system"><![CDATA['the System' ]]></Binding>
+                    </InputBindings>
+                    <OutputBindings>
+                        <Binding Language="bal" Name="ClaimStatus"><![CDATA['claims context' ]]></Binding>
+                    </OutputBindings>
+                </Invocation>
+            </FunctionTask>
+        </TaskList>
+        <NodeList>
+            <TaskNode Identifier="node_0" Task="task_0"/>
+            <TaskNode Identifier="node_2" Task="task_2"/>
+            <TaskNode Identifier="node_3" Task="task_3"/>
+            <TaskNode Identifier="node_4" Task="task_4"/>
+            <TaskNode Identifier="node_5" Task="task_5"/>
+            <TaskNode Identifier="node_6" Task="task_6"/>
+            <TaskNode Identifier="node_7" Task="task_7"/>
+        </NodeList>
+        <TransitionList>
+            <Transition Identifier="transition_3" Source="node_0" Target="node_3"/>
+            <Transition Identifier="transition_4" Source="node_3" Target="node_4"/>
+            <Transition Identifier="transition_6" Source="node_4" Target="node_5"/>
+            <Transition Identifier="transition_8" Source="node_5" Target="node_6"/>
+            <Transition Identifier="transition_5" Source="node_7" Target="node_2"/>
+            <Transition Identifier="transition_9" Source="node_6" Target="node_7"/>
+        </TransitionList>
+    </Body>
+    <Resources>
+        <ResourceSet Locale="en_US">
+            <Data Name="node_6#name"><![CDATA[Claim Validity]]></Data>
+            <Data Name="node_3#label"><![CDATA[Claim Complexity]]></Data>
+            <Data Name="node_0#name"><![CDATA[Start node]]></Data>
+            <Data Name="node_4#label"><![CDATA[Claim Medical Wastage]]></Data>
+            <Data Name="node_7#label"><![CDATA[Claims Context]]></Data>
+            <Data Name="node_5#name"><![CDATA[Claim Eligibility]]></Data>
+            <Data Name="node_2#name"><![CDATA[End node]]></Data>
+            <Data Name="node_5#label"><![CDATA[Claim Eligibility]]></Data>
+            <Data Name="node_4#name"><![CDATA[Claim Medical Wastage]]></Data>
+            <Data Name="node_6#label"><![CDATA[Claim Validity]]></Data>
+            <Data Name="node_3#name"><![CDATA[Claim Complexity]]></Data>
+            <Data Name="node_7#name"><![CDATA[Claims Context]]></Data>
+        </ResourceSet>
+    </Resources>
+</Ruleflow>
+</rfModel>
+</ilog.rules.studio.model.ruleflow:RuleFlow>

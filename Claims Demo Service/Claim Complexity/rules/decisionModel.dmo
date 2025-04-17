@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>6e420d60-774f-4e81-9239-d7b30673ec5a</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="Claims">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Claim" collection="true" name="Claims"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="Claims" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.Claim[]"/>
+    </inputData>
+    <decision id="node_1" name="Past 12 Months Claim Collect">
+        <description>How many claims were filed in the 12 months prior to the current claim submission?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Claim" collection="true" name="Claims"/>
+                <output bomType="java.lang.String" collection="true" name="Past 12 Months Claim Collect"/>
+                <rule defaultRule="false" href="node_1/Past%2012%20Months%20Claim%20Collect.drl" kind="BusinessRule" name="Past 12 Months Claim Collect"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Past 12 Months Claim Collect" typeRef="java.lang.String[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_2" name="Treatment Code List">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList" collection="true" name="Treatment Code List"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_2_ii" name="Treatment Code List" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList[]"/>
+    </inputData>
+    <decision id="node_3" name="Maximum Severity of Listed Treatment Codes">
+        <description>What is the maximum severity of the listed treatment codes?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList" collection="true" name="Treatment Code List"/>
+                <output bomType="java.lang.Double" collection="true" name="Maximum Severity of Listed Treatment Codes"/>
+                <rule defaultRule="false" href="node_3/Maximum%20Severity%20of%20Listed%20Treatment%20Codes.drl" kind="BusinessRule" name="Maximum Severity of Listed Treatment Codes"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_3_ii" name="Maximum Severity of Listed Treatment Codes" typeRef="java.lang.Double[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_4" name="Treatment Code">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCodeList" collection="true" name="Treatment Code List"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode" collection="true" name="Treatment Code"/>
+                <rule defaultRule="false" href="node_4/Treatment%20Code%20Count.drl" kind="BusinessRule" name="Treatment Code Count"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_4_ii" name="Treatment Code" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_5" name="Maximum Severity of Listed Treatment Code">
+        <description>What is the maximum count severity of the listed treatment codes?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="true" name="Maximum Severity of Listed Treatment Codes"/>
+                <output bomType="java.lang.Double" collection="false" name="Maximum Severity of Listed Treatment Code"/>
+                <rule defaultRule="false" href="node_5/Maximum%20Severity%20of%20Listed%20Treatment%20Code.drl" kind="BusinessRule" name="Maximum Severity of Listed Treatment Code"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_5_ii" name="Maximum Severity of Listed Treatment Code" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_6" name="Treatment Code Count">
+        <description>How many treatment codes are on this claim?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode" collection="true" name="Treatment Code"/>
+                <output bomType="java.lang.Double" collection="false" name="Treatment Code Count"/>
+                <rule defaultRule="false" href="node_6/Treatment%20Code%20Count.drl" kind="BusinessRule" name="Treatment Code Count"/>
+                <rule defaultRule="true" href="node_6/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_6_ii" name="Treatment Code Count" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_7" name="Treatment Complexity">
+        <description>Complexity level 
+What is the complexity level of this claim?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="Maximum Severity of Listed Treatment Code"/>
+                <input bomType="java.lang.Double" collection="false" name="Treatment Code Count"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentComplexity" collection="false" name="Treatment Complexity"/>
+                <rule defaultRule="false" href="node_7/Treatment%20Complexity.dmt" kind="DecisionTable" name="Treatment Complexity"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_7_ii" name="Treatment Complexity" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentComplexity"/>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_8" name="Diagnosis Code List">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList" collection="true" name="Diagnosis Code List"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_8_ii" name="Diagnosis Code List" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList[]"/>
+    </inputData>
+    <decision id="node_9" name="Diagnosis Code">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList" collection="true" name="Diagnosis Code List"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode" collection="true" name="Diagnosis Code"/>
+                <rule defaultRule="false" href="node_9/Diagnosis%20Code.drl" kind="BusinessRule" name="Diagnosis Code"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_9_ii" name="Diagnosis Code" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_8"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_10" name="Diagnosis Code Count">
+        <description>How many distinct diagnosis codes are present on this claim?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode" collection="true" name="Diagnosis Code"/>
+                <output bomType="java.lang.Double" collection="false" name="Diagnosis Code Count"/>
+                <rule defaultRule="false" href="node_10/Diagnosis%20Code%20Count.drl" kind="BusinessRule" name="Diagnosis Code Count"/>
+                <rule defaultRule="true" href="node_10/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_10_ii" name="Diagnosis Code Count" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_9"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_11" name="Comorbidity Complexity">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="Diagnosis Code Count"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.DiagnosisCodeList" collection="true" name="Diagnosis Code List"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Score" collection="true" name="Comorbidity Complexity"/>
+                <rule defaultRule="false" href="node_11/Comorbidity%20Complexity.dmt" kind="DecisionTable" name="Comorbidity Complexity"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_11_ii" name="Comorbidity Complexity" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.Score[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_10"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_8"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_12" name="Past 12 Months Claim Count">
+        <description>what is the count of claims were filed in the 12 months prior to the current claim submission?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.String" collection="true" name="Past 12 Months Claim Collect"/>
+                <output bomType="java.lang.Double" collection="false" name="Past 12 Months Claim Count"/>
+                <rule defaultRule="false" href="node_12/Past%2012%20Months%20Claim%20Count.drl" kind="BusinessRule" name="Past 12 Months Claim Count"/>
+                <rule defaultRule="true" href="node_12/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_12_ii" name="Past 12 Months Claim Count" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_13" name="Catastrophic Diagnosis Code Count">
+        <description>How many 'major' diagnosis codes are present on this claim?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Score" collection="true" name="Comorbidity Complexity"/>
+                <output bomType="java.lang.Double" collection="false" name="Catastrophic Diagnosis Code Count"/>
+                <rule defaultRule="false" href="node_13/Catastrophic%20Diagnosis%20Code%20Count.drl" kind="BusinessRule" name="Catastrophic Diagnosis Code Count"/>
+                <rule defaultRule="true" href="node_13/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_13_ii" name="Catastrophic Diagnosis Code Count" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_11"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_14" name="Claim History Complexity">
+        <description>What is the complexity level of this claim?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="Past 12 Months Claim Count"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentComplexity" collection="false" name="Claim History Complexity"/>
+                <rule defaultRule="false" href="node_14/Claim%20History%20Complexity.dmt" kind="DecisionTable" name="Claim History Complexity"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_14_ii" name="Claim History Complexity" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentComplexity"/>
+        <informationRequirement>
+            <requiredInput href="#node_12"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_15" name="Claim Complexity">
+        <description>What is the complexity level of this claim?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentComplexity" collection="false" name="Diagnosis Complexity"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentComplexity" collection="false" name="Claim History Complexity"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentComplexity" collection="false" name="Treatment Complexity"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Score" collection="false" name="Claim Complexity"/>
+                <rule defaultRule="false" href="node_15/Claim%20Complexity.dmt" kind="DecisionTable" name="Claim Complexity"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_15_ii" name="Claim Complexity" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.Score"/>
+        <informationRequirement>
+            <requiredInput href="#node_16"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_14"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_7"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_16" name="Diagnosis Complexity">
+        <description>What is the complexity level of this claim?</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="Catastrophic Diagnosis Code Count"/>
+                <input bomType="cpadmin.claims_demo.claims_demo_service.datastructure.Score" collection="true" name="Comorbidity Complexity"/>
+                <input bomType="java.lang.Double" collection="false" name="Diagnosis Code Count"/>
+                <output bomType="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentComplexity" collection="false" name="Diagnosis Complexity"/>
+                <rule defaultRule="false" href="node_16/Diagnosis%20Complexity.dmt" kind="DecisionTable" name="Diagnosis Complexity"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_16_ii" name="Diagnosis Complexity" typeRef="cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentComplexity"/>
+        <informationRequirement>
+            <requiredInput href="#node_13"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_11"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_10"/>
+        </informationRequirement>
+    </decision>
+</definitions>
+</definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

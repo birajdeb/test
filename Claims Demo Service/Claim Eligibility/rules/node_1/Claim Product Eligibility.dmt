@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+  <name>Claim Product Eligibility</name>
+  <uuid>ea043535-79b3-4228-bfa5-c2ed12806f46</uuid>
+  <locale>en_US</locale>
+  <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
+    <Body>
+        <Properties>
+            <Property Name="UI.MediaType"><![CDATA[Web]]></Property>
+            <Property Name="UI.RenderBoolean" Type="xs:boolean"><![CDATA[true]]></Property>
+        </Properties>
+        <Preconditions>
+            <Text><![CDATA[definitions 
+ 
+	set 'aClaim'  to a Claim in Claims ;]]></Text>
+        </Preconditions>
+        <Structure>
+            <ConditionDefinitions>
+                <ConditionDefinition Id="C0">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[the ProductCode of Policy is <a ProductCode> ]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C1">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[false]]></Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text><![CDATA[the Type of aClaim is <a ClaimType> ]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+            </ConditionDefinitions>
+            <ActionDefinitions>
+                <ActionDefinition Id="A0">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[add <an Eligible/NotEligible> to decision ]]></Text>
+                    </ExpressionDefinition>
+                </ActionDefinition>
+            </ActionDefinitions>
+        </Structure>
+        <Contents>
+            <Partition DefId="C0">
+                <Condition>
+                    <Expression/>
+                    <Partition DefId="C1">
+                        <Condition>
+                            <Expression>
+                                <Param><![CDATA[Not Medical]]></Param>
+                            </Expression>
+                            <ActionSet>
+                                <Action DefId="A0">
+                                    <Expression>
+                                        <Param><![CDATA[Not Eligible]]></Param>
+                                    </Expression>
+                                </Action>
+                            </ActionSet>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                        <Param><![CDATA[{ CP , CPN1 , CPN2 , CPN3 , CPN4 , CPN5 , CPN6 , MSA , PAB , PPM }]]></Param>
+                    </Expression>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression>
+                                <Param><![CDATA[Not Eligible]]></Param>
+                            </Expression>
+                        </Action>
+                    </ActionSet>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                        <Param><![CDATA[{AEC,AEC2N1,AEC2N2,AEC2N3,AEC2,HCP,HCP1,HCP1N1,HCP1N2,HCP1N3,HCPN1,HCPN2,HCPN3,HCPPE,HTPR,HTPRN1,HTPRN2,HTPRN3,HTPRN4,HTPRN5,HTPRN6,JUHCP,JUHCPN1,JUHCPN2,JUHCPN3,JUHCPPE,MBC,MBCN1,MBCN2,MBCN3,MBCN4,MBCN5,MBCN6,MBCW,MCP,MCP1,MCP1N1,MCP1N2,MCP1N3,MCPN1,MCPN2,MCPN3,MCPW,MHC,MLP,MLPN1,MLPN2,MLPN3,MLPN4,MLPN5,MLPN6,MLPW,P10A,PMP,PMPR,PMPRN1,PMPRN2,PMPRN3,PMPRN4,PMPRN5,PMPRN6,PMPRW,PMPW,RHC,RHI,RHIN1,RHIN2,RHIN3,SCP,SCPN1,SCPN2,SCPN3 }]]></Param>
+                    </Expression>
+                    <Partition DefId="C1">
+                        <Condition>
+                            <Expression>
+                                <Param><![CDATA[Medical]]></Param>
+                            </Expression>
+                            <ActionSet>
+                                <Action DefId="A0">
+                                    <Expression>
+                                        <Param><![CDATA[Eligible]]></Param>
+                                    </Expression>
+                                </Action>
+                            </ActionSet>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Otherwise]]></Param>
+                    </Expression>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression>
+                                <Param><![CDATA[Not Eligible]]></Param>
+                            </Expression>
+                        </Action>
+                    </ActionSet>
+                </Condition>
+            </Partition>
+        </Contents>
+    </Body>
+    <Resources DefaultLocale="en_US">
+        <ResourceSet Locale="en_US">
+            <Data Name="Definitions(C0)#HeaderText"><![CDATA[Product code]]></Data>
+            <Data Name="Definitions(C1)#HeaderText"><![CDATA[Claim Type]]></Data>
+            <Data Name="Definitions(A0)[0]#HeaderText"><![CDATA[an Eligible/NotEligible]]></Data>
+            <Data Name="Definitions(C0)[0]#HeaderText"><![CDATA[a Policy]]></Data>
+            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Claim Product Eligibility]]></Data>
+            <Data Name="Definitions(C1)[0]#HeaderText"><![CDATA[a number]]></Data>
+        </ResourceSet>
+    </Resources>
+</DT>
+</definition>
+</ilog.rules.studio.model.dt:DecisionTable>

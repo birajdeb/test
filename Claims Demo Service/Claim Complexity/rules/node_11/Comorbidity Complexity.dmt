@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+  <name>Comorbidity Complexity</name>
+  <uuid>41f319e2-981c-4054-a022-f6c696205325</uuid>
+  <locale>en_US</locale>
+  <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
+    <Body>
+        <Properties>
+            <Property Name="UI.MediaType">Web</Property>
+            <Property Name="UI.RenderBoolean" Type="xs:boolean">true</Property>
+        </Properties>
+        <Preconditions>
+            <Text> definitions 
+	set 'Diagnosis' to a Diagnosis  Code List in 'Diagnosis Code List' ; </Text>
+        </Preconditions>
+        <Structure>
+            <ConditionDefinitions>
+                <ConditionDefinition Id="C0">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean">true</Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean">false</Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text>'Diagnosis Code Count' is  &lt;a number&gt;</Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C1">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean">false</Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean">true</Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text> the Code of Diagnosis is one of &lt;DiagCodes&gt; </Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C3">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean">false</Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean">true</Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text> the Code2 of Diagnosis is one of  &lt;DiagCodes&gt; </Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+            </ConditionDefinitions>
+            <ActionDefinitions>
+                <ActionDefinition Id="A0">
+                    <ExpressionDefinition>
+                        <Text>add &lt;a Score&gt;  to decision </Text>
+                    </ExpressionDefinition>
+                </ActionDefinition>
+            </ActionDefinitions>
+        </Structure>
+        <Contents>
+            <Partition DefId="C0">
+                <Condition>
+                    <Expression>
+                        <Text>&lt;a number&gt; is less than &lt;a number&gt;</Text>
+                        <Param>2</Param>
+                    </Expression>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression>
+                                <Param>Low</Param>
+                            </Expression>
+                        </Action>
+                    </ActionSet>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param>2</Param>
+                    </Expression>
+                    <Partition DefId="C1">
+                        <Condition>
+                            <Expression>
+                                <Param>{ 211.3, 455.6, 455, 535.5 }</Param>
+                            </Expression>
+                            <Partition DefId="C3">
+                                <Condition>
+                                    <Expression>
+                                        <Param>{ 211.3, 455.6, 455, 535.5 }</Param>
+                                    </Expression>
+                                    <ActionSet>
+                                        <Action DefId="A0">
+                                            <Expression>
+                                                <Param>High</Param>
+                                            </Expression>
+                                        </Action>
+                                    </ActionSet>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param>2</Param>
+                    </Expression>
+                    <Partition DefId="C1">
+                        <Condition>
+                            <Expression>
+                                <Param>{ 7.1, 7.9, 8.61 }</Param>
+                            </Expression>
+                            <Partition DefId="C3">
+                                <Condition>
+                                    <Expression>
+                                        <Param>{ 7.1, 7.9, 8.61 }</Param>
+                                    </Expression>
+                                    <ActionSet>
+                                        <Action DefId="A0">
+                                            <Expression>
+                                                <Param>Moderate</Param>
+                                            </Expression>
+                                        </Action>
+                                    </ActionSet>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param>2</Param>
+                    </Expression>
+                    <Partition DefId="C1">
+                        <Condition>
+                            <Expression>
+                                <Param>{ 3, 4.9, 5 }</Param>
+                            </Expression>
+                            <Partition DefId="C3">
+                                <Condition>
+                                    <Expression>
+                                        <Param>{ 3, 4.9, 5 }</Param>
+                                    </Expression>
+                                    <ActionSet>
+                                        <Action DefId="A0">
+                                            <Expression>
+                                                <Param>Low</Param>
+                                            </Expression>
+                                        </Action>
+                                    </ActionSet>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Text>&lt;a number&gt; is more than &lt;a number&gt;</Text>
+                        <Param>2</Param>
+                    </Expression>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression>
+                                <Param>High</Param>
+                            </Expression>
+                        </Action>
+                    </ActionSet>
+                </Condition>
+            </Partition>
+        </Contents>
+    </Body>
+    <Resources DefaultLocale="en_US">
+        <ResourceSet Locale="en_US">
+            <Data Name="Definitions(C0)#HeaderText">Diagnosis Code Count</Data>
+            <Data Name="Definitions(C1)#HeaderText">Diagnosis Code</Data>
+            <Data Name="Definitions(C3)#HeaderText">Diagnosis Code 2</Data>
+            <Data Name="Definitions(A0)[0]#HeaderText">a string</Data>
+            <Data Name="Definitions(C0)[0]#HeaderText">min</Data>
+            <Data Name="Definitions(A0)#HeaderText">Comorbidity Complexity</Data>
+            <Data Name="Definitions(C1)[0]#HeaderText">a number</Data>
+        </ResourceSet>
+    </Resources>
+</DT>
+</definition>
+</ilog.rules.studio.model.dt:DecisionTable>

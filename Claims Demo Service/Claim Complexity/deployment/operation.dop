@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Claim Complexity">
+  <name>Claim_Complexity</name>
+  <uuid>d92d8a38-4222-4d22-a163-39ec49810eaf</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#6e420d60-774f-4e81-9239-d7b30673ec5a"/>
+  <targetRuleProject href="../../Claim%20Complexity#429cfa98-44d8-4eeb-8b74-584527b7405b"/>
+  <tags key="operationDescription">
+    <value><![CDATA[""]]></value>
+  </tags>
+  <tags key="operationName">
+    <value><![CDATA["Claim_Complexity"]]></value>
+  </tags>
+  <tags key="exposedAtRuntime">
+    <value><![CDATA[true]]></value>
+  </tags>
+</com.ibm.rules.studio.model.decisionservice:Operation>

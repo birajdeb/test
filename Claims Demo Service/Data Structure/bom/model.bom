@@ -1,0 +1,1362 @@
+
+package cpadmin.claims_demo.claims_demo_service.datastructure;
+
+
+class BenefitEligStatus
+        extends java.lang.Enum
+        property ads.typeId "22"
+        property com.fasterxml.jackson.annotation.JsonTypeName "BenefitEligStatus"
+        #de.generated
+{
+    domain {static active, static inactive}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.BenefitEligStatus active
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Active";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.BenefitEligStatus inactive
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Inactive";
+}
+
+class BenefitType
+        extends java.lang.Enum
+        property ads.typeId "19"
+        property com.fasterxml.jackson.annotation.JsonTypeName "BenefitType"
+        #de.generated
+{
+    domain {static hospitalCash, static hospitalReimbursment, static surgicalCash}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.BenefitType hospitalCash
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Hospital Cash";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.BenefitType hospitalReimbursment
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Hospital Reimbursment";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.BenefitType surgicalCash
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Surgical Cash";
+}
+
+class Benefits
+        property ads.typeId "18"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Benefits"
+        #de.generated
+{
+    cpadmin.claims_demo.claims_demo_service.datastructure.BenefitType type
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Type"
+                #update;
+    Benefits(cpadmin.claims_demo.claims_demo_service.datastructure.BenefitType type)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    Benefits()
+                #dataio.default;
+}
+
+class Claim
+        property ads.typeId "1"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Claim"
+        #de.generated
+{
+    double billedAmount
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "BilledAmount"
+                #update;
+    cpadmin.claims_demo.claims_demo_service.datastructure.Currency currency
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Currency"
+                #update;
+    java.time.LocalDate date
+                property ads.attributeId "12"
+                property com.fasterxml.jackson.annotation.JsonProperty "Date"
+                #update;
+    boolean fraudIndicator
+                property ads.attributeId "8"
+                property com.fasterxml.jackson.annotation.JsonProperty "FraudIndicator"
+                #update;
+    cpadmin.claims_demo.claims_demo_service.datastructure.GeographicArea geographicArea
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "GeographicArea"
+                #update;
+    double geographicCount
+                property ads.attributeId "7"
+                property com.fasterxml.jackson.annotation.JsonProperty "GeographicCount"
+                #update;
+    double lengthStay
+                property ads.attributeId "6"
+                property com.fasterxml.jackson.annotation.JsonProperty "LengthStay"
+                #update;
+    cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterCode medicalCenterCode
+                property ads.attributeId "15"
+                property com.fasterxml.jackson.annotation.JsonProperty "MedicalCenterCode"
+                #update;
+    cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterType medicalCenterType
+                property ads.attributeId "16"
+                property com.fasterxml.jackson.annotation.JsonProperty "MedicalCenterType"
+                #update;
+    double nonDisScore
+                property ads.attributeId "9"
+                property com.fasterxml.jackson.annotation.JsonProperty "NonDisScore"
+                #update;
+    string prevClaimsSubmitted
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "PrevClaimsSubmitted"
+                #update;
+    boolean redFlagIndicator
+                property ads.attributeId "13"
+                property com.fasterxml.jackson.annotation.JsonProperty "RedFlagIndicator"
+                #update;
+    string redFlagReason
+                property ads.attributeId "11"
+                property com.fasterxml.jackson.annotation.JsonProperty "RedFlagReason"
+                #update;
+    cpadmin.claims_demo.claims_demo_service.datastructure.SubType subType
+                property ads.attributeId "14"
+                property com.fasterxml.jackson.annotation.JsonProperty "SubType"
+                #update;
+    double surgeryCostAmount
+                property ads.attributeId "17"
+                property com.fasterxml.jackson.annotation.JsonProperty "SurgeryCostAmount"
+                #update;
+    cpadmin.claims_demo.claims_demo_service.datastructure.ClaimType type
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "Type"
+                #update;
+    boolean unstructuredData
+                property ads.attributeId "10"
+                property com.fasterxml.jackson.annotation.JsonProperty "UnstructuredData"
+                #update;
+    Claim(double billedAmount, 
+        cpadmin.claims_demo.claims_demo_service.datastructure.Currency currency, 
+        java.time.LocalDate date, 
+        boolean fraudIndicator, 
+        cpadmin.claims_demo.claims_demo_service.datastructure.GeographicArea geographicArea, 
+        double geographicCount, 
+        double lengthStay, 
+        cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterCode medicalCenterCode, 
+        cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterType medicalCenterType, 
+        double nonDisScore, 
+        string prevClaimsSubmitted, 
+        boolean redFlagIndicator, 
+        string redFlagReason, 
+        cpadmin.claims_demo.claims_demo_service.datastructure.SubType subType, 
+        double surgeryCostAmount, 
+        cpadmin.claims_demo.claims_demo_service.datastructure.ClaimType type, 
+        boolean unstructuredData)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    Claim()
+                #dataio.default;
+}
+
+class ClaimAmountEligibility
+        property ads.typeId "26"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Claim Amount Eligibility"
+        #de.generated
+{
+    string message
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Message"
+                #update;
+    cpadmin.claims_demo.claims_demo_service.datastructure.Eligible$NotEligible output
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Output"
+                #update;
+    ClaimAmountEligibility(string message, cpadmin.claims_demo.claims_demo_service.datastructure.Eligible$NotEligible output)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    ClaimAmountEligibility()
+                #dataio.default;
+}
+
+class ClaimCostReasonableness
+        property ads.typeId "37"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Claim Cost Reasonableness"
+        #de.generated
+{
+    string message
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Message"
+                #update;
+    cpadmin.claims_demo.claims_demo_service.datastructure.CostReasonableness output
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Output"
+                #update;
+    ClaimCostReasonableness(string message, cpadmin.claims_demo.claims_demo_service.datastructure.CostReasonableness output)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    ClaimCostReasonableness()
+                #dataio.default;
+}
+
+class ClaimEligibility
+        property ads.typeId "42"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Claim Eligibility"
+        #de.generated
+{
+    string message
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Message"
+                #update;
+    cpadmin.claims_demo.claims_demo_service.datastructure.Eligible$NotEligible output
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Output"
+                #update;
+    ClaimEligibility(string message, cpadmin.claims_demo.claims_demo_service.datastructure.Eligible$NotEligible output)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    ClaimEligibility()
+                #dataio.default;
+}
+
+class ClaimMedicalWastageAcceptability
+        extends java.lang.Enum
+        property ads.typeId "39"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Claim Medical Wastage Acceptability"
+        #de.generated
+{
+    domain {static acceptable, static notAcceptable, static questionable, static unacceptable}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability acceptable
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Acceptable";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability notAcceptable
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "Not Acceptable";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability questionable
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Questionable";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability unacceptable
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Unacceptable";
+}
+
+class ClaimMedicalWastageAcceptabilityList
+        property ads.typeId "38"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Claim Medical Wastage Acceptability List"
+        #de.generated
+{
+    string message
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Message"
+                #update;
+    cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability output
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Output"
+                #update;
+    ClaimMedicalWastageAcceptabilityList(string message, cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability output)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    ClaimMedicalWastageAcceptabilityList()
+                #dataio.default;
+}
+
+class ClaimStatus
+        extends java.lang.Enum
+        property ads.typeId "43"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Claim Status"
+        #de.generated
+{
+    domain {static accept, static decline, static manualReview}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ClaimStatus accept
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Accept";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ClaimStatus decline
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Decline";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ClaimStatus manualReview
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Manual Review";
+}
+
+class ClaimType
+        extends java.lang.Enum
+        property ads.typeId "4"
+        property com.fasterxml.jackson.annotation.JsonTypeName "ClaimType"
+        #de.generated
+{
+    domain {static medical, static notMedical}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ClaimType medical
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Medical";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ClaimType notMedical
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Not Medical";
+}
+
+class ClaimUnstructuredData
+        extends java.lang.Enum
+        property ads.typeId "29"
+        property com.fasterxml.jackson.annotation.JsonTypeName "ClaimUnstructuredData"
+        #de.generated
+{
+    domain {static noUnstructuredData, static unstructuredData}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ClaimUnstructuredData noUnstructuredData
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "No Unstructured Data";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ClaimUnstructuredData unstructuredData
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Unstructured Data";
+}
+
+class ClaimValidity
+        property ads.typeId "34"
+        property com.fasterxml.jackson.annotation.JsonTypeName "ClaimValidity"
+        #de.generated
+{
+    string message
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Message"
+                #update;
+    cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidityList output
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Output"
+                #update;
+    ClaimValidity(string message, cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidityList output)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    ClaimValidity()
+                #dataio.default;
+}
+
+class ClaimValidityList
+        extends java.lang.Enum
+        property ads.typeId "33"
+        property com.fasterxml.jackson.annotation.JsonTypeName "ClaimValidityList"
+        #de.generated
+{
+    domain {static notValid, static questionable, static valid}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidityList notValid
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Not Valid";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidityList questionable
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Questionable";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidityList valid
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Valid";
+}
+
+class CostReasonableness
+        extends java.lang.Enum
+        property ads.typeId "17"
+        property com.fasterxml.jackson.annotation.JsonTypeName "CostReasonableness"
+        #de.generated
+{
+    domain {static QUESTIONABLE, static REASONABLE, static UNREASONABLE, static noneOfTheAbove}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.CostReasonableness QUESTIONABLE
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "QUESTIONABLE";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.CostReasonableness REASONABLE
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "REASONABLE";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.CostReasonableness UNREASONABLE
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "UNREASONABLE";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.CostReasonableness noneOfTheAbove
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "None Of The Above";
+}
+
+class Currency
+        extends java.lang.Enum
+        property ads.typeId "2"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Currency"
+        #de.generated
+{
+    domain {static CAD, static USD}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.Currency CAD
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "CAD";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.Currency USD
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "USD";
+}
+
+class CurrentClaim
+        extends java.lang.Enum
+        property ads.typeId "23"
+        property com.fasterxml.jackson.annotation.JsonTypeName "CurrentClaim"
+        #de.generated
+{
+    domain {static notNull, static @null}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.CurrentClaim notNull
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Not Null";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.CurrentClaim @null
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Null";
+}
+
+class DecisionOutput
+        property ads.typeId "44"
+        property com.fasterxml.jackson.annotation.JsonTypeName "DecisionOutput"
+        #de.generated
+{
+    cpadmin.claims_demo.claims_demo_service.datastructure.Score claimComplexity
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Claim Complexity"
+                #update;
+    java.util.List claimEligibility domain 0,* class cpadmin.claims_demo.claims_demo_service.datastructure.ClaimEligibility
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "Claim Eligibility"
+                #update;
+    java.util.List claimMedicalWastage domain 0,* class cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Claim Medical Wastage"
+                #update;
+    java.util.List claimStatus domain 0,* class cpadmin.claims_demo.claims_demo_service.datastructure.ClaimStatus
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "Claim Status"
+                #update;
+    java.util.List claimValidity domain 0,* class cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidity
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Claim Validity"
+                #update;
+    DecisionOutput(cpadmin.claims_demo.claims_demo_service.datastructure.Score claimComplexity, 
+        java.util.List claimEligibility domain 0,* class cpadmin.claims_demo.claims_demo_service.datastructure.ClaimEligibility, 
+        java.util.List claimMedicalWastage domain 0,* class cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability, 
+        java.util.List claimStatus domain 0,* class cpadmin.claims_demo.claims_demo_service.datastructure.ClaimStatus, 
+        java.util.List claimValidity domain 0,* class cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidity)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    DecisionOutput()
+                #dataio.default;
+    void addTo_claimEligibility(cpadmin.claims_demo.claims_demo_service.datastructure.ClaimEligibility claimEligibility)
+                property collectionAttribute "claimEligibility"
+                #update;
+    void addTo_claimMedicalWastage(cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability claimMedicalWastage)
+                property collectionAttribute "claimMedicalWastage"
+                #update;
+    void addTo_claimStatus(cpadmin.claims_demo.claims_demo_service.datastructure.ClaimStatus claimStatus)
+                property collectionAttribute "claimStatus"
+                #update;
+    void addTo_claimValidity(cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidity claimValidity)
+                property collectionAttribute "claimValidity"
+                #update;
+    void clear_claimEligibility()
+                property collectionAttribute "claimEligibility"
+                #update;
+    void clear_claimMedicalWastage()
+                property collectionAttribute "claimMedicalWastage"
+                #update;
+    void clear_claimStatus()
+                property collectionAttribute "claimStatus"
+                #update;
+    void clear_claimValidity()
+                property collectionAttribute "claimValidity"
+                #update;
+    void removeFrom_claimEligibility(cpadmin.claims_demo.claims_demo_service.datastructure.ClaimEligibility claimEligibility)
+                property collectionAttribute "claimEligibility"
+                #update;
+    void removeFrom_claimMedicalWastage(cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability claimMedicalWastage)
+                property collectionAttribute "claimMedicalWastage"
+                #update;
+    void removeFrom_claimStatus(cpadmin.claims_demo.claims_demo_service.datastructure.ClaimStatus claimStatus)
+                property collectionAttribute "claimStatus"
+                #update;
+    void removeFrom_claimValidity(cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidity claimValidity)
+                property collectionAttribute "claimValidity"
+                #update;
+    void set_claimEligibility(java.util.Collection claimEligibility domain 0,* class cpadmin.claims_demo.claims_demo_service.datastructure.ClaimEligibility)
+                property collectionAttribute "claimEligibility"
+                #update;
+    void set_claimMedicalWastage(java.util.Collection claimMedicalWastage domain 0,* class cpadmin.claims_demo.claims_demo_service.datastructure.ClaimMedicalWastageAcceptability)
+                property collectionAttribute "claimMedicalWastage"
+                #update;
+    void set_claimStatus(java.util.Collection claimStatus domain 0,* class cpadmin.claims_demo.claims_demo_service.datastructure.ClaimStatus)
+                property collectionAttribute "claimStatus"
+                #update;
+    void set_claimValidity(java.util.Collection claimValidity domain 0,* class cpadmin.claims_demo.claims_demo_service.datastructure.ClaimValidity)
+                property collectionAttribute "claimValidity"
+                #update;
+}
+
+class DiagCode
+        extends java.lang.Enum
+        property ads.typeId "16"
+        property com.fasterxml.jackson.annotation.JsonTypeName "DiagCode"
+        #de.generated
+{
+    domain {static $, static $$1, static $$61, static $$9, static $$91, static $1, static $11$3, static $24$8, static $35$5, static $50$90, static $53$9, static $55, static $55$6, static $61$01}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode $
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "3";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode $$1
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "7.1";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode $$61
+                property ads.attributeId "7"
+                property com.fasterxml.jackson.annotation.JsonProperty "8.61";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode $$9
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "4.9";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode $$91
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "7.9";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode $1
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "5";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode $11$3
+                property ads.attributeId "6"
+                property com.fasterxml.jackson.annotation.JsonProperty "211.3";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode $24$8
+                property ads.attributeId "13"
+                property com.fasterxml.jackson.annotation.JsonProperty "824.8";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode $35$5
+                property ads.attributeId "9"
+                property com.fasterxml.jackson.annotation.JsonProperty "535.5";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode $50$90
+                property ads.attributeId "11"
+                property com.fasterxml.jackson.annotation.JsonProperty "550.90";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode $53$9
+                property ads.attributeId "12"
+                property com.fasterxml.jackson.annotation.JsonProperty "553.9";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode $55
+                property ads.attributeId "10"
+                property com.fasterxml.jackson.annotation.JsonProperty "455";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode $55$6
+                property ads.attributeId "8"
+                property com.fasterxml.jackson.annotation.JsonProperty "455.6";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode $61$01
+                property ads.attributeId "14"
+                property com.fasterxml.jackson.annotation.JsonProperty "361.01";
+}
+
+class DiagnosisCodeList
+        property ads.typeId "15"
+        property com.fasterxml.jackson.annotation.JsonTypeName "DiagnosisCodeList"
+        #de.generated
+{
+    boolean catastrophicIndicator
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "CatastrophicIndicator"
+                #update;
+    cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode code
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Code"
+                #update;
+    cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode code2
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "Code2"
+                #update;
+    cpadmin.claims_demo.claims_demo_service.datastructure.CostReasonableness costReasonableness
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "CostReasonableness"
+                #update;
+    string description
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "Description"
+                #update;
+    DiagnosisCodeList(boolean catastrophicIndicator, cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode code, cpadmin.claims_demo.claims_demo_service.datastructure.DiagCode code2, cpadmin.claims_demo.claims_demo_service.datastructure.CostReasonableness costReasonableness, string description)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    DiagnosisCodeList()
+                #dataio.default;
+}
+
+class EarlyClaimIndicator
+        extends java.lang.Enum
+        property ads.typeId "31"
+        property com.fasterxml.jackson.annotation.JsonTypeName "EarlyClaimIndicator"
+        #de.generated
+{
+    domain {static earlyClaimIdentified, static earlyClaimNotIdentified}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.EarlyClaimIndicator earlyClaimIdentified
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Early Claim Identified";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.EarlyClaimIndicator earlyClaimNotIdentified
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Early Claim Not Identified";
+}
+
+class Eligible$NotEligible
+        extends java.lang.Enum
+        property ads.typeId "8"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Eligible/NotEligible"
+        #de.generated
+{
+    domain {static eligible, static notEligible}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.Eligible$NotEligible eligible
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Eligible";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.Eligible$NotEligible notEligible
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Not Eligible";
+}
+
+class Exclusions
+        extends java.lang.Enum
+        property ads.typeId "24"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Exclusions"
+        #de.generated
+{
+    domain {static cosmeticProcedureExclusion, static noExclusion, static pre$ConditionsExclusion}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.Exclusions cosmeticProcedureExclusion
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Cosmetic Procedure Exclusion";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.Exclusions noExclusion
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "No Exclusion";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.Exclusions pre$ConditionsExclusion
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Pre-Conditions Exclusion";
+}
+
+class GeographicArea
+        extends java.lang.Enum
+        property ads.typeId "3"
+        property com.fasterxml.jackson.annotation.JsonTypeName "GeographicArea"
+        #de.generated
+{
+    domain {static USA, static canada, static other}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.GeographicArea USA
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "USA";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.GeographicArea canada
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Canada";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.GeographicArea other
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Other";
+}
+
+class LengthOfStayPercentileList
+        property ads.typeId "36"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Length Of Stay Percentile List"
+        #de.generated
+{
+    double lenghOfStay50thPercentileList
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Lengh Of Stay 50th Percentile List"
+                #update;
+    double lenghOfStay75thPercentileList
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Lengh Of Stay 75th Percentile List"
+                #update;
+    double lenghOfStay90thPercentileList
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Lengh Of Stay 90th Percentile List"
+                #update;
+    LengthOfStayPercentileList(double lenghOfStay50thPercentileList, double lenghOfStay75thPercentileList, double lenghOfStay90thPercentileList)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    LengthOfStayPercentileList()
+                #dataio.default;
+}
+
+class MedicalCenterCode
+        extends java.lang.Enum
+        property ads.typeId "6"
+        property com.fasterxml.jackson.annotation.JsonTypeName "MedicalCenterCode"
+        #de.generated
+{
+    domain {static $15, static $23, static $44, static $55, static $79}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterCode $15
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "115";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterCode $23
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "123";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterCode $44
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "144";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterCode $55
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "155";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterCode $79
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "179";
+}
+
+class MedicalCenterType
+        extends java.lang.Enum
+        property ads.typeId "7"
+        property com.fasterxml.jackson.annotation.JsonTypeName "MedicalCenterType"
+        #de.generated
+{
+    domain {static clinic, static hospital}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterType clinic
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Clinic";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.MedicalCenterType hospital
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Hospital";
+}
+
+class Policy
+        property ads.typeId "20"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Policy"
+        #de.generated
+{
+    cpadmin.claims_demo.claims_demo_service.datastructure.BenefitEligStatus benefitEligStatus
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "BenefitEligStatus"
+                #update;
+    cpadmin.claims_demo.claims_demo_service.datastructure.CurrentClaim currentClaim
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "CurrentClaim"
+                #update;
+    cpadmin.claims_demo.claims_demo_service.datastructure.Exclusions exclusions
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "Exclusions"
+                #update;
+    cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode productCode
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "ProductCode"
+                #update;
+    Policy(cpadmin.claims_demo.claims_demo_service.datastructure.BenefitEligStatus benefitEligStatus, cpadmin.claims_demo.claims_demo_service.datastructure.CurrentClaim currentClaim, cpadmin.claims_demo.claims_demo_service.datastructure.Exclusions exclusions, cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode productCode)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    Policy()
+                #dataio.default;
+}
+
+class PolicyAndBenefitEligibility
+        extends java.lang.Enum
+        property ads.typeId "32"
+        property com.fasterxml.jackson.annotation.JsonTypeName "PolicyAndBenefitEligibility"
+        #de.generated
+{
+    domain {static eligible, static ineligible}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.PolicyAndBenefitEligibility eligible
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Eligible";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.PolicyAndBenefitEligibility ineligible
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Ineligible";
+}
+
+class PolicyGeneralExclusions
+        extends java.lang.Enum
+        property ads.typeId "30"
+        property com.fasterxml.jackson.annotation.JsonTypeName "PolicyGeneralExclusions"
+        #de.generated
+{
+    domain {static exclusionIdentified, static exclusionNotIdentified}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.PolicyGeneralExclusions exclusionIdentified
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Exclusion Identified";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.PolicyGeneralExclusions exclusionNotIdentified
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Exclusion Not Identified";
+}
+
+class ProductCode
+        extends java.lang.Enum
+        property ads.typeId "21"
+        property com.fasterxml.jackson.annotation.JsonTypeName "ProductCode"
+        #de.generated
+{
+    domain 
+    {
+        static AEC,
+        static AEC2,
+        static AEC2N1,
+        static AEC2N2,
+        static AEC2N3,
+        static CP,
+        static CPN1,
+        static CPN2,
+        static CPN3,
+        static CPN4,
+        static CPN5,
+        static CPN6,
+        static HCP,
+        static HCP1,
+        static HCP1N1,
+        static HCP1N2,
+        static HCP1N3,
+        static HCPN1,
+        static HCPN2,
+        static HCPN3,
+        static HCPPE,
+        static HTPR,
+        static HTPRN1,
+        static HTPRN2,
+        static HTPRN3,
+        static HTPRN4,
+        static HTPRN5,
+        static HTPRN6,
+        static JUHCP,
+        static JUHCPN1,
+        static JUHCPN2,
+        static JUHCPN3,
+        static JUHCPPE,
+        static MBC,
+        static MBCN1,
+        static MBCN2,
+        static MBCN3,
+        static MBCN4,
+        static MBCN5,
+        static MBCN6,
+        static MBCW,
+        static MCP,
+        static MCP1,
+        static MCP1N1,
+        static MCP1N2,
+        static MCP1N3,
+        static MCPN1,
+        static MCPN2,
+        static MCPN3,
+        static MCPW,
+        static MHC,
+        static MLP,
+        static MLPN1,
+        static MLPN2,
+        static MLPN3,
+        static MLPN4,
+        static MLPN5,
+        static MLPN6,
+        static MLPW,
+        static MSA,
+        static PAB,
+        static PMP,
+        static PMPR,
+        static PMPRN1,
+        static PMPRN2,
+        static PMPRN3,
+        static PMPRN4,
+        static PMPRN5,
+        static PMPRN6,
+        static PMPRW,
+        static PMPW,
+        static PPM,
+        static RHC,
+        static RHI,
+        static RHIN1,
+        static RHIN2,
+        static RHIN3,
+        static SCP,
+        static SCPN1,
+        static SCPN2,
+        static SCPN3,
+        static otherwise,
+        static p10A
+    }
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode AEC
+                property ads.attributeId "8"
+                property com.fasterxml.jackson.annotation.JsonProperty "AEC";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode AEC2
+                property ads.attributeId "12"
+                property com.fasterxml.jackson.annotation.JsonProperty "AEC2";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode AEC2N1
+                property ads.attributeId "9"
+                property com.fasterxml.jackson.annotation.JsonProperty "AEC2N1";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode AEC2N2
+                property ads.attributeId "10"
+                property com.fasterxml.jackson.annotation.JsonProperty "AEC2N2";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode AEC2N3
+                property ads.attributeId "11"
+                property com.fasterxml.jackson.annotation.JsonProperty "AEC2N3";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode CP
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "CP";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode CPN1
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "CPN1";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode CPN2
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "CPN2";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode CPN3
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "CPN3";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode CPN4
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "CPN4";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode CPN5
+                property ads.attributeId "6"
+                property com.fasterxml.jackson.annotation.JsonProperty "CPN5";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode CPN6
+                property ads.attributeId "7"
+                property com.fasterxml.jackson.annotation.JsonProperty "CPN6";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode HCP
+                property ads.attributeId "13"
+                property com.fasterxml.jackson.annotation.JsonProperty "HCP";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode HCP1
+                property ads.attributeId "14"
+                property com.fasterxml.jackson.annotation.JsonProperty "HCP1";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode HCP1N1
+                property ads.attributeId "15"
+                property com.fasterxml.jackson.annotation.JsonProperty "HCP1N1";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode HCP1N2
+                property ads.attributeId "16"
+                property com.fasterxml.jackson.annotation.JsonProperty "HCP1N2";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode HCP1N3
+                property ads.attributeId "17"
+                property com.fasterxml.jackson.annotation.JsonProperty "HCP1N3";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode HCPN1
+                property ads.attributeId "18"
+                property com.fasterxml.jackson.annotation.JsonProperty "HCPN1";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode HCPN2
+                property ads.attributeId "19"
+                property com.fasterxml.jackson.annotation.JsonProperty "HCPN2";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode HCPN3
+                property ads.attributeId "20"
+                property com.fasterxml.jackson.annotation.JsonProperty "HCPN3";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode HCPPE
+                property ads.attributeId "21"
+                property com.fasterxml.jackson.annotation.JsonProperty "HCPPE";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode HTPR
+                property ads.attributeId "22"
+                property com.fasterxml.jackson.annotation.JsonProperty "HTPR";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode HTPRN1
+                property ads.attributeId "23"
+                property com.fasterxml.jackson.annotation.JsonProperty "HTPRN1";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode HTPRN2
+                property ads.attributeId "24"
+                property com.fasterxml.jackson.annotation.JsonProperty "HTPRN2";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode HTPRN3
+                property ads.attributeId "25"
+                property com.fasterxml.jackson.annotation.JsonProperty "HTPRN3";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode HTPRN4
+                property ads.attributeId "26"
+                property com.fasterxml.jackson.annotation.JsonProperty "HTPRN4";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode HTPRN5
+                property ads.attributeId "27"
+                property com.fasterxml.jackson.annotation.JsonProperty "HTPRN5";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode HTPRN6
+                property ads.attributeId "28"
+                property com.fasterxml.jackson.annotation.JsonProperty "HTPRN6";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode JUHCP
+                property ads.attributeId "29"
+                property com.fasterxml.jackson.annotation.JsonProperty "JUHCP";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode JUHCPN1
+                property ads.attributeId "30"
+                property com.fasterxml.jackson.annotation.JsonProperty "JUHCPN1";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode JUHCPN2
+                property ads.attributeId "31"
+                property com.fasterxml.jackson.annotation.JsonProperty "JUHCPN2";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode JUHCPN3
+                property ads.attributeId "32"
+                property com.fasterxml.jackson.annotation.JsonProperty "JUHCPN3";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode JUHCPPE
+                property ads.attributeId "33"
+                property com.fasterxml.jackson.annotation.JsonProperty "JUHCPPE";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MBC
+                property ads.attributeId "34"
+                property com.fasterxml.jackson.annotation.JsonProperty "MBC";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MBCN1
+                property ads.attributeId "35"
+                property com.fasterxml.jackson.annotation.JsonProperty "MBCN1";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MBCN2
+                property ads.attributeId "36"
+                property com.fasterxml.jackson.annotation.JsonProperty "MBCN2";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MBCN3
+                property ads.attributeId "37"
+                property com.fasterxml.jackson.annotation.JsonProperty "MBCN3";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MBCN4
+                property ads.attributeId "38"
+                property com.fasterxml.jackson.annotation.JsonProperty "MBCN4";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MBCN5
+                property ads.attributeId "39"
+                property com.fasterxml.jackson.annotation.JsonProperty "MBCN5";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MBCN6
+                property ads.attributeId "40"
+                property com.fasterxml.jackson.annotation.JsonProperty "MBCN6";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MBCW
+                property ads.attributeId "41"
+                property com.fasterxml.jackson.annotation.JsonProperty "MBCW";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MCP
+                property ads.attributeId "42"
+                property com.fasterxml.jackson.annotation.JsonProperty "MCP";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MCP1
+                property ads.attributeId "43"
+                property com.fasterxml.jackson.annotation.JsonProperty "MCP1";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MCP1N1
+                property ads.attributeId "44"
+                property com.fasterxml.jackson.annotation.JsonProperty "MCP1N1";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MCP1N2
+                property ads.attributeId "45"
+                property com.fasterxml.jackson.annotation.JsonProperty "MCP1N2";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MCP1N3
+                property ads.attributeId "46"
+                property com.fasterxml.jackson.annotation.JsonProperty "MCP1N3";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MCPN1
+                property ads.attributeId "47"
+                property com.fasterxml.jackson.annotation.JsonProperty "MCPN1";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MCPN2
+                property ads.attributeId "48"
+                property com.fasterxml.jackson.annotation.JsonProperty "MCPN2";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MCPN3
+                property ads.attributeId "49"
+                property com.fasterxml.jackson.annotation.JsonProperty "MCPN3";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MCPW
+                property ads.attributeId "50"
+                property com.fasterxml.jackson.annotation.JsonProperty "MCPW";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MHC
+                property ads.attributeId "51"
+                property com.fasterxml.jackson.annotation.JsonProperty "MHC";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MLP
+                property ads.attributeId "52"
+                property com.fasterxml.jackson.annotation.JsonProperty "MLP";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MLPN1
+                property ads.attributeId "53"
+                property com.fasterxml.jackson.annotation.JsonProperty "MLPN1";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MLPN2
+                property ads.attributeId "54"
+                property com.fasterxml.jackson.annotation.JsonProperty "MLPN2";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MLPN3
+                property ads.attributeId "55"
+                property com.fasterxml.jackson.annotation.JsonProperty "MLPN3";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MLPN4
+                property ads.attributeId "56"
+                property com.fasterxml.jackson.annotation.JsonProperty "MLPN4";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MLPN5
+                property ads.attributeId "57"
+                property com.fasterxml.jackson.annotation.JsonProperty "MLPN5";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MLPN6
+                property ads.attributeId "58"
+                property com.fasterxml.jackson.annotation.JsonProperty "MLPN6";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MLPW
+                property ads.attributeId "59"
+                property com.fasterxml.jackson.annotation.JsonProperty "MLPW";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode MSA
+                property ads.attributeId "60"
+                property com.fasterxml.jackson.annotation.JsonProperty "MSA";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode PAB
+                property ads.attributeId "63"
+                property com.fasterxml.jackson.annotation.JsonProperty "PAB";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode PMP
+                property ads.attributeId "64"
+                property com.fasterxml.jackson.annotation.JsonProperty "PMP";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode PMPR
+                property ads.attributeId "65"
+                property com.fasterxml.jackson.annotation.JsonProperty "PMPR";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode PMPRN1
+                property ads.attributeId "66"
+                property com.fasterxml.jackson.annotation.JsonProperty "PMPRN1";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode PMPRN2
+                property ads.attributeId "67"
+                property com.fasterxml.jackson.annotation.JsonProperty "PMPRN2";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode PMPRN3
+                property ads.attributeId "68"
+                property com.fasterxml.jackson.annotation.JsonProperty "PMPRN3";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode PMPRN4
+                property ads.attributeId "69"
+                property com.fasterxml.jackson.annotation.JsonProperty "PMPRN4";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode PMPRN5
+                property ads.attributeId "70"
+                property com.fasterxml.jackson.annotation.JsonProperty "PMPRN5";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode PMPRN6
+                property ads.attributeId "71"
+                property com.fasterxml.jackson.annotation.JsonProperty "PMPRN6";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode PMPRW
+                property ads.attributeId "72"
+                property com.fasterxml.jackson.annotation.JsonProperty "PMPRW";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode PMPW
+                property ads.attributeId "73"
+                property com.fasterxml.jackson.annotation.JsonProperty "PMPW";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode PPM
+                property ads.attributeId "74"
+                property com.fasterxml.jackson.annotation.JsonProperty "PPM";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode RHC
+                property ads.attributeId "75"
+                property com.fasterxml.jackson.annotation.JsonProperty "RHC";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode RHI
+                property ads.attributeId "76"
+                property com.fasterxml.jackson.annotation.JsonProperty "RHI";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode RHIN1
+                property ads.attributeId "77"
+                property com.fasterxml.jackson.annotation.JsonProperty "RHIN1";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode RHIN2
+                property ads.attributeId "78"
+                property com.fasterxml.jackson.annotation.JsonProperty "RHIN2";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode RHIN3
+                property ads.attributeId "79"
+                property com.fasterxml.jackson.annotation.JsonProperty "RHIN3";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode SCP
+                property ads.attributeId "80"
+                property com.fasterxml.jackson.annotation.JsonProperty "SCP";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode SCPN1
+                property ads.attributeId "81"
+                property com.fasterxml.jackson.annotation.JsonProperty "SCPN1";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode SCPN2
+                property ads.attributeId "82"
+                property com.fasterxml.jackson.annotation.JsonProperty "SCPN2";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode SCPN3
+                property ads.attributeId "83"
+                property com.fasterxml.jackson.annotation.JsonProperty "SCPN3";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode otherwise
+                property ads.attributeId "61"
+                property com.fasterxml.jackson.annotation.JsonProperty "Otherwise";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.ProductCode p10A
+                property ads.attributeId "62"
+                property com.fasterxml.jackson.annotation.JsonProperty "P10A";
+}
+
+class RedFlagCategoryList
+        property ads.typeId "25"
+        property com.fasterxml.jackson.annotation.JsonTypeName "RedFlagCategoryList"
+        #de.generated
+{
+    string category
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Category"
+                #update;
+    RedFlagCategoryList(string category)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    RedFlagCategoryList()
+                #dataio.default;
+}
+
+class Score
+        extends java.lang.Enum
+        property ads.typeId "28"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Score"
+        #de.generated
+{
+    domain {static high, static low, static moderate, static veryHigh}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.Score high
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "High";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.Score low
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Low";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.Score moderate
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Moderate";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.Score veryHigh
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "Very High";
+}
+
+class SubType
+        extends java.lang.Enum
+        property ads.typeId "5"
+        property com.fasterxml.jackson.annotation.JsonTypeName "SubType"
+        #de.generated
+{
+    domain {static cosmetic, static dental, static longTreatment, static surgery, static treatment}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.SubType cosmetic
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "Cosmetic";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.SubType dental
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Dental";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.SubType longTreatment
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "Long Treatment";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.SubType surgery
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Surgery";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.SubType treatment
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Treatment";
+}
+
+class SurgeryAssmts
+        extends java.lang.Enum
+        property ads.typeId "13"
+        property com.fasterxml.jackson.annotation.JsonTypeName "SurgeryAssmts"
+        #de.generated
+{
+    domain {static appropriate, static none, static questionable}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryAssmts appropriate
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Appropriate";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryAssmts none
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "None";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryAssmts questionable
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Questionable";
+}
+
+class SurgeryCostPercentileList
+        property ads.typeId "35"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Surgery Cost Percentile List"
+        #de.generated
+{
+    double surgeryCost50thPercentileList
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Surgery Cost 50th Percentile List"
+                #update;
+    double surgeryCost75thPercentileList
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Surgery Cost 75th Percentile List"
+                #update;
+    double surgeryCost90thPercentileList
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Surgery Cost 90th Percentile List"
+                #update;
+    SurgeryCostPercentileList(double surgeryCost50thPercentileList, double surgeryCost75thPercentileList, double surgeryCost90thPercentileList)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    SurgeryCostPercentileList()
+                #dataio.default;
+}
+
+class SurgicalCode
+        extends java.lang.Enum
+        property ads.typeId "12"
+        property com.fasterxml.jackson.annotation.JsonTypeName "SurgicalCode"
+        #de.generated
+{
+    domain {static $017, static $018, static $021, static $030, static $138, static $253, static $254, static $357, static $406, static $882}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode $017
+                property ads.attributeId "7"
+                property com.fasterxml.jackson.annotation.JsonProperty "0017";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode $018
+                property ads.attributeId "8"
+                property com.fasterxml.jackson.annotation.JsonProperty "0018";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode $021
+                property ads.attributeId "9"
+                property com.fasterxml.jackson.annotation.JsonProperty "0021";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode $030
+                property ads.attributeId "10"
+                property com.fasterxml.jackson.annotation.JsonProperty "0030";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode $138
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "1138";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode $253
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "0253";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode $254
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "0254";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode $357
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "0357";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode $406
+                property ads.attributeId "6"
+                property com.fasterxml.jackson.annotation.JsonProperty "1406";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode $882
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "0882";
+}
+
+class System
+        property ads.typeId "40"
+        property com.fasterxml.jackson.annotation.JsonTypeName "System"
+        #de.generated
+{
+    java.time.LocalDate runDate
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "RunDate"
+                #update;
+    System(java.time.LocalDate runDate)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    System()
+                #dataio.default;
+}
+
+class TreatmentCode
+        extends java.lang.Enum
+        property ads.typeId "11"
+        property com.fasterxml.jackson.annotation.JsonTypeName "TreatmentCode"
+        #de.generated
+{
+    domain {static $151, static $170, static $171, static $253, static $254, static $357, static $679, static $845, static $882}
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode $151
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "1151";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode $170
+                property ads.attributeId "9"
+                property com.fasterxml.jackson.annotation.JsonProperty "1170";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode $171
+                property ads.attributeId "7"
+                property com.fasterxml.jackson.annotation.JsonProperty "1171";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode $253
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "0253";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode $254
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "0254";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode $357
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "0357";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode $679
+                property ads.attributeId "6"
+                property com.fasterxml.jackson.annotation.JsonProperty "0679";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode $845
+                property ads.attributeId "8"
+                property com.fasterxml.jackson.annotation.JsonProperty "0845";
+    static final readonly cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode $882
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "0882";
+}
+
+class TreatmentCodeList
+        property ads.typeId "9"
+        property com.fasterxml.jackson.annotation.JsonTypeName "TreatmentCodeList"
+        #de.generated
+{
+    cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode code
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Code"
+                #update;
+    double cost
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "Cost"
+                #update;
+    double severity
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Severity"
+                #update;
+    cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryAssmts surgeryAssmts
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "SurgeryAssmts"
+                #update;
+    cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode surgicalCode
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "SurgicalCode"
+                #update;
+    TreatmentCodeList(cpadmin.claims_demo.claims_demo_service.datastructure.TreatmentCode code, double cost, double severity, cpadmin.claims_demo.claims_demo_service.datastructure.SurgeryAssmts surgeryAssmts, cpadmin.claims_demo.claims_demo_service.datastructure.SurgicalCode surgicalCode)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    TreatmentCodeList()
+                #dataio.default;
+}
+
+class TreatmentComplexity
+        property ads.typeId "27"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Treatment Complexity"
+        #de.generated
+{
+    string message
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Message"
+                #update;
+    cpadmin.claims_demo.claims_demo_service.datastructure.Score output
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Output"
+                #update;
+    TreatmentComplexity(string message, cpadmin.claims_demo.claims_demo_service.datastructure.Score output)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    TreatmentComplexity()
+                #dataio.default;
+}
+
