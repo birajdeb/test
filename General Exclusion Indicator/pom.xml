@@ -65,6 +65,7 @@
         <module>1.2 General Exclusion Indicator</module>
         <module>Evernorth Data Model</module>
         <module>Inovatec Loan Recommended Outcome</module>
+        <module>Inovatec Loan Recommended</module>
     </modules>
     <build>
         <pluginManagement>
