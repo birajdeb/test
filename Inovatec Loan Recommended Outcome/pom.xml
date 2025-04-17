@@ -63,6 +63,7 @@
     <modules>
         <module>.decisionservice</module>
         <module>Inovatec Loan Recommended Outcome</module>
+        <module>Inovatec Loan Recommended</module>
     </modules>
     <build>
         <pluginManagement>
