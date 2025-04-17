@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Short Sale Loan Eligibility List Collection">
+  <name>Short Sale Loan Eligibility List Collection</name>
+  <uuid>428060ca-1847-4810-bdb4-98f4261b74dc</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#DFM-bdea02d3-b0ec-4d8c-804d-83931e5cf63f"/>
+  <targetRuleProject href="../../Short%20Sale%20Loan%20Eligibility%20List%20Collection#854a6a2f-4280-458e-90d6-4506fc22791a"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>
