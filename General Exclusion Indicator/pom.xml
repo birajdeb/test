@@ -66,6 +66,7 @@
         <module>Evernorth Data Model</module>
         <module>Inovatec Loan Recommended Outcome</module>
         <module>Inovatec Loan Recommended</module>
+        <module>Short Sale Loan Eligibility List Collection</module>
     </modules>
     <build>
         <pluginManagement>

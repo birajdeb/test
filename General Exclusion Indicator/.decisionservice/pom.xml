@@ -41,6 +41,11 @@
             <artifactId>InovatecLoanRecommended</artifactId>
             <version>LATEST-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>birajdeb_bluepolaris.com.demo_test.general_exclusion_indicator</groupId>
+            <artifactId>ShortSaleLoanEligibilityListCollection</artifactId>
+            <version>LATEST-SNAPSHOT</version>
+        </dependency>
     </dependencies>
     <profiles>
         <profile>
@@ -133,6 +138,15 @@
                                 <artifactItem>
                                     <groupId>birajdeb_bluepolaris.com.demo_test.general_exclusion_indicator</groupId>
                                     <artifactId>InovatecLoanRecommended</artifactId>
+                                    <version>LATEST-SNAPSHOT</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <includes>**/*.class</includes>
+                                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>birajdeb_bluepolaris.com.demo_test.general_exclusion_indicator</groupId>
+                                    <artifactId>ShortSaleLoanEligibilityListCollection</artifactId>
                                     <version>LATEST-SNAPSHOT</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>
