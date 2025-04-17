@@ -1,0 +1,25 @@
+
+# skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.SAEFactData
+skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.SAEFactData#concept.label = SAE Fact Data
+skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.SAEFactData.CGNFactCode#phrase.action = set the CGN Fact Code of {this} to {CGN Fact Code}
+skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.SAEFactData.CGNFactCode#phrase.navigation = {CGN Fact Code} of {this}
+skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.SAEFactData.MSKIndicator#phrase.action[0] = {this} gets MSK Indicator only if {MSK Indicator}
+skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.SAEFactData.MSKIndicator#phrase.action[1] = make it {MSK Indicator} that {this} is MSK Indicator
+skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.SAEFactData.MSKIndicator#phrase.action[1].deprecated = true
+skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.SAEFactData.MSKIndicator#phrase.navigation = {this} is MSK Indicator
+skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.SAEFactData.MSKIndicator#phrase.negative_predicate = {this} is not MSK Indicator
+skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.SAEFactData.MSKIndicator#phrase.negative_predicate_setter = {this} does not get MSK Indicator
+skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.SAEFactData.MSKIndicator#phrase.positive_predicate_setter = {this} gets MSK Indicator
+skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.SAEFactData.SAEFactData(java.lang.String,boolean,java.lang.String,double)#phrase.navigation = a new {SAE Fact Data} where {0, CGN Fact Code} {1, MSK Indicator} {2, Fact Code Value} {3, Spine Surgery in 90 - 270 Days Risk Score}
+skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.SAEFactData.factCodeValue#phrase.action = set the Fact Code Value of {this} to {Fact Code Value}
+skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.SAEFactData.factCodeValue#phrase.navigation = {Fact Code Value} of {this}
+skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.SAEFactData.spineSurgeryIn90$270DaysRiskScore#phrase.action = set the Spine Surgery in 90 - 270 Days Risk Score of {this} to {Spine Surgery in 90 - 270 Days Risk Score}
+skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.SAEFactData.spineSurgeryIn90$270DaysRiskScore#phrase.addition_setter = add {Spine Surgery in 90 - 270 Days Risk Score} to the Spine Surgery in 90 - 270 Days Risk Score of {this}
+skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.SAEFactData.spineSurgeryIn90$270DaysRiskScore#phrase.navigation = {Spine Surgery in 90 - 270 Days Risk Score} of {this}
+skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.SAEFactData.spineSurgeryIn90$270DaysRiskScore#phrase.subtraction_setter = subtract {Spine Surgery in 90 - 270 Days Risk Score} from the Spine Surgery in 90 - 270 Days Risk Score of {this}
+
+# skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.System
+skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.System#concept.label = System
+skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.System.System(java.time.ZonedDateTime)#phrase.navigation = a new {System} where {0, Run Date}
+skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.System.runDate#phrase.action = set the Run Date of {this} to {Run Date}
+skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.System.runDate#phrase.navigation = {Run Date} of {this}

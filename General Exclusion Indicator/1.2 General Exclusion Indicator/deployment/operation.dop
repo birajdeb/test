@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="1.2 General Exclusion Indicator">
+  <name>2_General_Exclusion_Indicator</name>
+  <uuid>8f27eba6-365c-4b6b-9c94-0ce5ec153fd9</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#4600d9bb-47c1-484b-850b-f3090249a4b4"/>
+  <targetRuleProject href="../../1.2%20General%20Exclusion%20Indicator#2110e0d0-6876-4478-84f5-c4c08f3005a7"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

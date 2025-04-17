@@ -1,0 +1,52 @@
+
+package skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel;
+
+
+class SAEFactData
+        property ads.typeId "1"
+        property com.fasterxml.jackson.annotation.JsonTypeName "SAEFactData"
+        #de.generated
+{
+    string CGNFactCode
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "CGN Fact Code"
+                #update;
+    boolean MSKIndicator
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "MSK Indicator"
+                #update;
+    string factCodeValue
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Fact Code Value"
+                #update;
+    double spineSurgeryIn90$270DaysRiskScore
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "Spine Surgery in 90 - 270 Days Risk Score"
+                #update;
+    SAEFactData(string CGNFactCode, boolean MSKIndicator, string factCodeValue, double spineSurgeryIn90$270DaysRiskScore)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    SAEFactData()
+                #dataio.default;
+}
+
+class System
+        property ads.typeId "2"
+        property com.fasterxml.jackson.annotation.JsonTypeName "System"
+        #de.generated
+{
+    java.time.ZonedDateTime runDate
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Run Date"
+                #update;
+    System(java.time.ZonedDateTime runDate)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    System()
+                #dataio.default;
+}
+

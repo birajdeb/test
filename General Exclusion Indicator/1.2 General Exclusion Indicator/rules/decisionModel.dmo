@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>4600d9bb-47c1-484b-850b-f3090249a4b4</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="System">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.System" collection="false" name="System"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="System" typeRef="skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.System"/>
+    </inputData>
+    <decision id="node_1" name="SIX Month Lookback Threshold Date">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.System" collection="false" name="System"/>
+                <output bomType="java.time.LocalDate" collection="false" name="SIX Month Lookback Threshold Date"/>
+                <rule defaultRule="false" href="node_1/SIX%20Month%20Lookback%20Threshold%20Date.drl" kind="BusinessRule" name="SIX Month Lookback Threshold Date"/>
+                <rule defaultRule="true" href="node_1/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="SIX Month Lookback Threshold Date" typeRef="java.time.LocalDate"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_2" name="SAE Fact Data">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.SAEFactData" collection="true" name="SAE Fact Data"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_2_ii" name="SAE Fact Data" typeRef="skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.SAEFactData[]"/>
+    </inputData>
+    <decision id="node_3" name="CKD5 Recent Indicator">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.time.LocalDate" collection="false" name="SIX Month Lookback Threshold Date"/>
+                <input bomType="skarale_decisionmanagementsolutions.com.evernorth_training.general_exclusion_indicator.evernorthdatamodel.SAEFactData" collection="true" name="SAE Fact Data"/>
+                <output bomType="java.lang.String" collection="false" name="CKD5 Recent Indicator"/>
+                <rule defaultRule="false" href="node_3/CKD5%20Recent%20Indicator.dmt" kind="DecisionTable" name="CKD5 Recent Indicator"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_3_ii" name="CKD5 Recent Indicator" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+</definitions>
+</definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

@@ -1,0 +1,10 @@
+{
+  "description" : "1.2 General Exclusion Indicator",
+  "groupId" : "birajdeb_bluepolaris.com.demo_test.general_exclusion_indicator",
+  "locale" : "en_US",
+  "properties" : {
+    "refactoringEnabled" : false,
+    "tags" : [ ]
+  },
+  "extraProperties" : { }
+}
