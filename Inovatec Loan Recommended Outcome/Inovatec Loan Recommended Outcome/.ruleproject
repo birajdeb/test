@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ilog.rules.studio.model.base:RuleProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore" xmlns:ilog.rules.studio.model.bom="http://ilog.rules.studio/model/bom.ecore" xmlns:ilog.rules.studio.model.query="http://ilog.rules.studio/model/query.ecore" xmlns:ilog.rules.studio.model.xom="http://ilog.rules.studio/model/xom.ecore" buildMode="DecisionEngine" isADecisionService="true" projectKind="DecisionModel" projectVersion="2.0.0">
   <name>Inovatec Loan Recommended Outcome</name>
-  <uuid>ab1ecf46-5ea5-45ad-b01e-107e27b8eb50</uuid>
+  <uuid>18c1ed1e-9ade-43a2-befc-fe39e88f57c8</uuid>
   <outputLocation>output</outputLocation>
   <categories>any</categories>
   <paths xsi:type="ilog.rules.studio.model.xom:XOMPath" pathID="XOM">
