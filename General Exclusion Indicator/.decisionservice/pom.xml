@@ -1,15 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>birajdeb_bluepolaris.com.demo_test.general_exclusion_indicator</groupId>
         <artifactId>generalExclusionIndicator</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
-
     <artifactId>generalExclusionIndicatorDecisionService</artifactId>
     <packaging>jar</packaging>
-
     <dependencies>
         <dependency>
             <groupId>birajdeb_bluepolaris.com.demo_test.general_exclusion_indicator</groupId>
@@ -33,10 +31,12 @@
             <version>${engine-api.version}</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>birajdeb_bluepolaris.com.demo_test.general_exclusion_indicator</groupId>
+            <artifactId>InovatecLoanRecommendedOutcome</artifactId>
+            <version>LATEST-SNAPSHOT</version>
+        </dependency>
     </dependencies>
-
-    
-
     <profiles>
         <profile>
             <id>include-libs</id>
@@ -74,12 +74,7 @@
             </build>
         </profile>
     </profiles>
-
-
-
-
-
-<build>
+    <build>
         <resources>
             <resource>
                 <directory>${project.basedir}</directory>
@@ -115,6 +110,15 @@
                                 <artifactItem>
                                     <groupId>birajdeb_bluepolaris.com.demo_test.general_exclusion_indicator</groupId>
                                     <artifactId>evernorthDataModel</artifactId>
+                                    <version>LATEST-SNAPSHOT</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <includes>**/*.class</includes>
+                                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>birajdeb_bluepolaris.com.demo_test.general_exclusion_indicator</groupId>
+                                    <artifactId>InovatecLoanRecommendedOutcome</artifactId>
                                     <version>LATEST-SNAPSHOT</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>

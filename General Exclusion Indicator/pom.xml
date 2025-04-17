@@ -1,18 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>birajdeb_bluepolaris.com.demo_test.general_exclusion_indicator</groupId>
     <artifactId>generalExclusionIndicator</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>General Exclusion Indicator</name>
     <description>1.2 General Exclusion Indicator</description>
-
     <packaging>pom</packaging>
-
     <properties>
         <ads-mojo.version>14.2.0</ads-mojo.version>
         <buildTime>${maven.build.timestamp}</buildTime>
-        <decision-ml-predictor.version>1.0.5</decision-ml-predictor.version>
         <decisionServiceId>${project.groupId}:${project.artifactId}</decisionServiceId>
         <engine-api.version>3.4.0</engine-api.version>
         <engine-compact-runtime.version>3.4.0</engine-compact-runtime.version>
@@ -29,7 +26,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -68,8 +64,8 @@
         <module>.decisionservice</module>
         <module>1.2 General Exclusion Indicator</module>
         <module>Evernorth Data Model</module>
+        <module>Inovatec Loan Recommended Outcome</module>
     </modules>
-
     <build>
         <pluginManagement>
             <plugins>
@@ -77,7 +73,7 @@
                     <groupId>com.ibm.decision</groupId>
                     <artifactId>build-maven-plugin</artifactId>
                     <version>${ads-mojo.version}</version>
-                <dependencies>
+                    <dependencies>
                         <dependency>
                             <groupId>com.ibm.decision</groupId>
                             <artifactId>decision-ml-predictor</artifactId>
@@ -85,7 +81,7 @@
                         </dependency>
                     </dependencies>
                 </plugin>
-            <plugin>
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
@@ -115,5 +111,4 @@
             </plugins>
         </pluginManagement>
     </build>
-
 </project>
