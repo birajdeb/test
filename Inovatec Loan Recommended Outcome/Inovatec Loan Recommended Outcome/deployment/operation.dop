@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Inovatec Loan Recommended Outcome">
-  <name>Inovatec Loan Recommended Outcome</name>
-  <uuid>21015e8d-46a7-45b5-b691-9e3e298628de</uuid>
-  <decisionModel href="../rules/decisionModel.dmo#9fed43f5-2f27-405f-b029-91132d7534d5"/>
-  <targetRuleProject href="../../Inovatec%20Loan%20Recommended%20Outcome#18c1ed1e-9ade-43a2-befc-fe39e88f57c8"/>
-</com.ibm.rules.studio.model.decisionservice:Operation>
